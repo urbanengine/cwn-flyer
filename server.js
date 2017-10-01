@@ -1,15 +1,63 @@
+// Get dependencies
+const express = require('express');
+const path = require('path');
+const http = require('http');
+const bodyParser = require('body-parser');
+
+// Get our events routes
+const events = require('./server/routes/events');
+
+const app = express();
+
+// Parsers for POST data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Point static path to dist
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Set our events route
+app.use('/events', events);
+
+// Catch all other routes and return the index file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+/**
+ * Get port from environment and store in Express.
+ */
+const port = process.env.PORT || '3000';
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+
+
+
+
+//TODO: Fix webpack stuff below
+
 /*eslint no-console:0 */
-'use strict';
+/*'use strict';
 require('core-js/fn/object/assign');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
-const open = require('open');
+const open = require('open');*/
 
 /**
  * Flag indicating whether webpack compiled for the first time.
  * @type {boolean}
  */
+/*
 let isInitialCompilation = true;
 
 const compiler = webpack(config);
@@ -33,4 +81,4 @@ compiler.plugin('done', () => {
     }, 350);
   }
   isInitialCompilation = false;
-});
+});*/
