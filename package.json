@@ -56,15 +56,15 @@
     "react-hot-loader": "^1.2.9",
     "rimraf": "^2.4.3",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.12.0",
-    "webpack-dev-server": "^1.12.0"
+    "url-loader": "^0.5.6"
   },
   "dependencies": {
     "axios": "^0.16.2",
     "core-js": "^2.0.0",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-dom": "^15.0.0",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.12.0"
   }
 }
