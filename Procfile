@@ -1,1 +1,1 @@
-web: npm run server:dist
+web: npm run serve:dist
