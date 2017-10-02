@@ -9,7 +9,7 @@ class EventListComponent extends React.Component {
     return (
         <div className="time-slot-bracket">
             <div className="time-slot-title">
-                <Moment format="h:mm">{this.props.time}</Moment>
+                <Moment format="h:mm">{time}</Moment>
             </div>
         </div>
     );

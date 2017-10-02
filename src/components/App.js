@@ -6,7 +6,6 @@ require('styles/App.css');
 import React from 'react';
 import axios from 'axios'
 
-import EventList from 'components/EventList.js'
 import TimeSlot from 'components/TimeSlot.js'
 import Jumbotron from 'components/Jumbotron.js'
 
@@ -44,7 +43,7 @@ class AppComponent extends React.Component {
     
     return (
       <div>
-        <Jumbotron cwnDate={times[0] != undefined ? slottedEvents[times[0]][0].date : ""} cwnNumber={times[0] != undefined ? slottedEvents[times[0]][0].cwn : ""}/>
+        <Jumbotron cwnDate={times[0] != undefined ? slottedEvents[times[0]][0].date : ''} cwnNumber={times[0] != undefined ? slottedEvents[times[0]][0].cwn : ''}/>
         <div className="container my-2 cwn-schedule">
           {slottedList}
         </div>
