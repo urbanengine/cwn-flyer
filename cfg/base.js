@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 let path = require('path');
 let defaultSettings = require('./defaults');
 
@@ -28,20 +28,7 @@ module.exports = {
     hot: true,
     port: defaultSettings.port,
     publicPath: defaultSettings.publicPath,
-    noInfo: false,
-    setup: function(app) {
-      // Get all events
-      app.get('/events', (req, res) => {
-        axios.get(`http://www.openhuntsville.com/api/v1/cwn_flyer`)
-          .then(events => {
-            console.log(events.data);
-            res.status(200).json(events.data);
-          })
-          .catch(error => {
-            res.status(500).send(error)
-          });
-      });
-    }
+    noInfo: false
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
@@ -51,6 +38,7 @@ module.exports = {
       sources: `${defaultSettings.srcPath}/sources/`,
       stores: `${defaultSettings.srcPath}/stores/`,
       styles: `${defaultSettings.srcPath}/styles/`,
+      fonts: `${defaultSettings.srcPath}/fonts/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
       'react/lib/ReactMount': 'react-dom/lib/ReactMount'
     }

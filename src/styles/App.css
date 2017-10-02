@@ -1,5 +1,312 @@
-/* Base Application Styles */
 body {
-  color: #fff;
-  background: #faa;
+  font-family: 'Raleway', sans-serif;
+  background: #EBE6DB;
 }
+
+@font-face {
+  font-family: 'norwesterregular';
+  src: url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff2') format('woff2'), url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: norwesterregular;
+}
+
+a {
+  color:#F96156;
+  font-weight:bold;
+}
+a:hover {
+  color:#c1342a;
+}
+
+.jumbotron {
+  padding:2rem 4%;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/schedule-bg-2400.jpg) 50% 50% transparent;
+  background-size:cover;
+  color:#e8e2d0;
+  text-align:center;
+  border-radius:0;
+}
+
+.cwn-logo {
+  max-width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:2rem;
+}
+
+.cwn-intro, .cwn-sponsors {
+  margin-bottom:2rem;
+}
+
+.cwn-info {
+  font-size:1.75rem;
+}
+.cwn-date-time:before {
+  content: " | "
+}
+.cwn-time:before {
+  content: " - "
+}
+.cwn-location:before {
+  content: " | "
+}
+@media (max-width:543px) {
+  .cwn-info {
+    font-size:1.5rem;
+  }
+  .cwn-date-time, .cwn-location {
+    display: block;
+  }
+  .cwn-date-time:before, .cwn-location:before {
+    content: "";
+  }
+}
+
+
+@media (max-width:543px) {
+  .cwn-schedule {
+    padding-left:0;
+    padding-right:0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cwn-schedule {
+    width: 100%;
+  }
+}
+
+
+.card {
+  overflow: hidden;
+  margin-bottom:10px;
+}
+@media (max-width:543px) {
+  .card {
+    border-radius:0;
+    margin-bottom:20px;
+  }
+}
+@media (min-width: 544px) {
+  .card {
+    min-width: 400px;
+  }
+}
+@media (min-width:992px) {
+  .card {
+    max-width: calc(50% - 16px);
+  }
+}
+
+
+/* Fix Bootstrap dumbness so that cards in a deck can wrap to the next row */
+
+@media (min-width: 544px) {
+  .card-deck {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  .card-deck .card {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+  }
+  .card-deck .card:not(:last-child) {
+    margin-right: 8px;
+  }
+  .card-deck .card:not(:first-child) {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width:543px) {
+  .time-slot-bracket {
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#EBE6DB;
+  }
+  .time-slot-title {
+    font-weight:bold;
+    margin-left:20px;
+    font-size:1.2em;
+  }
+}
+@media (min-width: 544px) {
+  .time-slot {
+    position:relative;
+    margin-left:40px;
+  }
+  .time-slot-bracket {
+    border-left:1px solid rgba(0,0,0,0.7);
+    border-top:1px solid rgba(0,0,0,0.7);
+    border-bottom:1px solid rgba(0,0,0,0.7);
+    width:10px;
+    position:absolute;
+    height:calc(100% - 16px);
+    left:-20px;
+  }
+  .time-slot-title {
+    display:block;
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 28px;
+    width: 80px;
+    left: -55px;
+    text-align: right;
+  }
+}
+
+.card.workshop {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1)
+}
+
+@media (max-width:543px) {
+  .workshop-title {
+    font-size: 1.5em;
+  }
+}
+
+.workshop-title {
+  letter-spacing: -0.5px;
+  line-height: 1.2em;
+  margin-bottom: 0.2em;
+  z-index:1;
+  position:relative;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.workshop-title>span {
+  box-shadow: inset 0 -0.1em #F96156;
+}
+
+.workshop-icon {
+  position:absolute;
+  top:-28px;
+  right:-28px;
+  color: #F96156;
+  opacity:0.3;
+  border: 8px solid #F96156;
+  border-radius: 50%;
+  padding:26px;
+  z-index:0;
+}
+
+.workshop-icon i {
+  font-size: 5em;
+}
+
+.group-title {
+  display: inline-block;
+  margin-bottom: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size:1.2em;
+  z-index:1;
+}
+
+.workshop-category {
+  position:relative;
+  background: #e5e5e5;
+  color: #757575;
+  padding:4px 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.workshop-time {
+  display: inline-block;
+  margin-bottom: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size:1.2em;
+}
+
+.workshop-location {
+  font-weight: bold;
+  font-size:1.2em;
+}
+
+.workshop-location:before {
+  content:"// ";
+}
+
+.workshop-location:empty:before {
+  content:""
+}
+
+.workshop-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.footer-spacer {
+  height:80px;
+}
+@media (min-width: 544px) {
+  .footer-spacer {
+    height:60px;
+  }
+}
+
+footer.fixed-bottom {
+  background:#000;
+  color:#fff;
+}
+
+footer.fixed-bottom p {
+  margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+  footer.fixed-bottom p {
+    font-size:1.5rem;
+  }
+}
+
+
+
+.jumbotron .cwn-sponsors, footer .schedule-url {
+  display:none;
+}
+
+/* Only on RER signage */
+@media screen and (min-width: 1080px) and (min-height: 1920x) {
+  .cwn-intro, .cwn-location {
+    display:none;
+  }
+  .cwn-sponsors {
+    display:block;
+  }
+}
+
+.workshop-icon {
+    text-align: center;
+}
+
+.workshop-icon i {
+    height: 1em;
+    width: 1em;
+}
+
+.workshop-category {
+    white-space: nowrap;
+}
+

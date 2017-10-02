@@ -1,8 +1,7 @@
-require('normalize.css/normalize.css');
 require('styles/EventList.css');
 
 import React from 'react';
-import EventItem from 'components/EventItem/EventItem.js'
+import EventItem from 'components/EventItem.js'
 
 class EventListComponent extends React.Component {
   render() {
@@ -12,9 +11,9 @@ class EventListComponent extends React.Component {
   );
 
     return (
-        <ul>
-            {listItems}
-        </ul>
+      <div className="card-deck">
+        {listItems}
+      </div>
     );
   }
 }
