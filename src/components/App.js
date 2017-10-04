@@ -13,12 +13,7 @@ class AppComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      slottedEvents: []
-    }
-  }
 
-  componentWillMount() {
     axios.get('/events')
     .then(response => {
       var slottedEvents = {};
@@ -29,10 +24,12 @@ class AppComponent extends React.Component {
         slottedEvents[time].push(event);
       }, this);
 
-      this.setState({ slottedEvents });
+      this.state = {
+        slottedEvents: slottedEvents
+      }
     });
   }
-
+  
   render() {
     const slottedEvents = this.state.slottedEvents;
     var times = Object.keys(slottedEvents);
