@@ -18,7 +18,7 @@ class AppComponent extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get('/events')
     .then(response => {
       var slottedEvents = {};
