@@ -3,8 +3,7 @@ require('styles/vender/font-awesome.min.css');
 require('styles/vender/Raleway.css');
 require('styles/App.css');
 
-import React from 'react';
-import axios from 'axios'
+import React from 'react'
 
 import TimeSlot from 'components/TimeSlot.js'
 import Jumbotron from 'components/Jumbotron.js'
@@ -19,17 +18,19 @@ class AppComponent extends React.Component {
   }
 
   componentWillMount() {
-    axios.get('/events')
-    .then(response => {
+    var that = this;
+    fetch('/events')
+    .then(function(res) {
+        return res.json();
+    }).then(function(response) {
       var slottedEvents = {};
-      response.data.forEach(function(event) {
+      response.forEach(function(event) {
         var time = event.start_time;
         if (slottedEvents[time] == undefined)
           slottedEvents[time] = [];
         slottedEvents[time].push(event);
-      }, this);
-
-      this.setState({ slottedEvents });
+      });
+      that.setState({ slottedEvents: slottedEvents });
     });
   }
 
