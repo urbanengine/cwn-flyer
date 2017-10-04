@@ -10,7 +10,7 @@ import React from 'react'
 import TimeSlot from 'components/TimeSlot.js'
 import Jumbotron from 'components/Jumbotron.js'
 
-class AppComponent extends React.Component {
+class NextScheduleComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -21,22 +21,25 @@ class AppComponent extends React.Component {
 
   componentWillMount() {
     var that = this;
-    fetch('/events')
-    .then(function(res) {
-        return res.json();
-    }).then(function(response) {
-      var slottedEvents = {};
-      response.forEach(function(event) {
-        var time = event.start_time;
-        if (slottedEvents[time] == undefined)
-          slottedEvents[time] = [];
-        slottedEvents[time].push(event);
+      fetch('/api/cwnEvents/next')
+      .then(function(res) {
+          return res.json();
+      }).then(function(response) {
+        var slottedEvents = {};
+        response.forEach(function(event) {
+          var time = event.start_time;
+          if (slottedEvents[time] == undefined)
+            slottedEvents[time] = [];
+          slottedEvents[time].push(event);
+        });
+        that.setState({ slottedEvents: slottedEvents });
       });
-      that.setState({ slottedEvents: slottedEvents });
-    });
   }
 
   render() {
+    console.log('render');
+    console.log(this.props.match);
+    console.log(this.props.match.params.cwnNumber);
     const slottedEvents = this.state.slottedEvents;
     var times = Object.keys(slottedEvents);
     times.sort();
@@ -67,7 +70,7 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
+NextScheduleComponent.defaultProps = {
 };
 
-export default AppComponent;
+export default NextScheduleComponent;
