@@ -2,6 +2,8 @@ require('styles/vender/bootstrap.min.css');
 require('styles/vender/font-awesome.min.css');
 require('styles/vender/Raleway.css');
 require('styles/App.css');
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 import React from 'react'
 
