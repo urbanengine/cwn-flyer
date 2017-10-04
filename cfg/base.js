@@ -2,9 +2,6 @@
 let path = require('path');
 let defaultSettings = require('./defaults');
 
-// declare axios for making http requests
-const axios = require('axios');
-
 // Additional npm or bower modules to include in builds
 // Add all foreign plugins you may need into this array
 // @example:

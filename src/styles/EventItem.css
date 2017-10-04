@@ -81,7 +81,7 @@
   }
   
   .workshop-location:before {
-    content:"// ";
+    content:" // ";
   }
   
   .workshop-location:empty:before {

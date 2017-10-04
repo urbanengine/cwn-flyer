@@ -32,7 +32,7 @@ let config = Object.assign({}, baseConfig, {
 // Add needed loaders to the defaults here
 config.module.loaders.push({
   test: /\.(js|jsx)$/,
-  loader: 'babel',
+  loader: 'babel-loader?presets[]=es2015',
   include: [].concat(
     config.additionalPaths,
     [ path.join(__dirname, '/../src') ]
