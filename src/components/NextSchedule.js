@@ -15,7 +15,8 @@ class NextScheduleComponent extends React.Component {
     super(props);
 
     this.state = {
-      slottedEvents: []
+      slottedEvents: [],
+      loading: true
     }
   }
 
@@ -32,14 +33,13 @@ class NextScheduleComponent extends React.Component {
             slottedEvents[time] = [];
           slottedEvents[time].push(event);
         });
-        that.setState({ slottedEvents: slottedEvents });
+        that.setState({ slottedEvents: slottedEvents, loading: false });
       });
   }
 
   render() {
-    console.log('render');
-    console.log(this.props.match);
-    console.log(this.props.match.params.cwnNumber);
+    if (this.state.loading)
+      return (<div></div>);
     const slottedEvents = this.state.slottedEvents;
     var times = Object.keys(slottedEvents);
     times.sort();
