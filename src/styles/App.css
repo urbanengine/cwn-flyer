@@ -25,7 +25,7 @@ a {
 a:hover {
   color:#c1342a;
 }
-
+/*https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/schedule-bg-2400.jpg*/
 .jumbotron {
   padding:2rem 4%;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/schedule-bg-2400.jpg) 50% 50% transparent;
@@ -312,3 +312,60 @@ footer.fixed-bottom p {
     white-space: nowrap;
 }
 
+
+.workshop-updated .workshop-title:before {
+  content:"Updated:";
+  text-decoration: none;
+  display:inline-block;
+  margin-right:4px;
+  vertical-align:text-top;
+  color:#fff;
+  background-color: #f96156;
+  padding:5px;
+  font-size:1rem;
+  line-height:1rem;
+}
+
+.workshop-ended {
+  background:#e5e5e5;
+}
+.workshop-ended p, .workshop-ended span, .workshop-ended .progress {
+opacity:0.6;
+} 
+
+.workshop-canceled {
+  background:#e5e5e5;
+}
+
+.workshop-canceled p, .workshop-canceled span {
+opacity:0.5;
+} 
+
+.workshop-canceled .workshop-title {
+  text-decoration:line-through;
+}
+
+.workshop-canceled .workshop-title:before {
+  content:"Canceled:";
+  text-decoration: none;
+  display:inline-block;
+  margin-right:5px;
+  vertical-align:text-top;
+  color:#fff;
+  background-color: #f96156;
+  padding:5px;
+  font-size:1rem;
+  line-height:1rem;
+}
+
+.progress {
+  border-radius: 0;
+  height: 8px;
+  background-color: #f96156;
+  z-index:1;
+
+}
+
+.progress-bar {
+  background-color: #c63c32;
+}

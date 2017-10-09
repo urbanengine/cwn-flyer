@@ -62,8 +62,7 @@ class CurrentScheduleComponent extends React.Component {
               <a href="https://coworkingnight.org/schedule">coworkingnight.org/schedule</a>
             </p>
             <p className="cwn-sponsors">
-              Sponsored by <a href="https://www.facebook.com/SparkHSV/" target="_blank">Spark HSV</a> and <a href="https://www.hackster.io" target="_blank">Hackster.io</a>. Presented by <a href="https://newleafdigital.org" target="_blank">New Leaf Digital</a>.
-            </p>
+            Sponsored by <a href="https://www.huntsvillewest.com" target="_blank">Huntsville West</a> and <a href="https://www.hackster.io" target="_blank">Hackster.io</a>. Presented by <a href="https://newleafdigital.org" target="_blank">Urban Engine</a>.            </p>
           </div>
         </footer>
       </div>

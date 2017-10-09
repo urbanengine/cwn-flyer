@@ -22,7 +22,7 @@ class JumbotronComponent extends React.Component {
               Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
             </p>
             <p className="cwn-sponsors">
-              <strong>Sponsored by Spark HSV and Hackster.io.<br /> Presented by New Leaf Digital.</strong>
+              <strong>Sponsored by Huntsville West and Hackster.io.<br /> Presented by Urban Engine.</strong>
             </p>
             <h2 className="cwn-info">
               <span className="cwn-edition">
@@ -32,7 +32,7 @@ class JumbotronComponent extends React.Component {
                 <span className="cwn-date"><Moment format="LL">{cwnDate}</Moment></span>
                 <span className="cwn-time">6‑10pm</span>
               </span>
-              <span className="cwn-location">Spark HSV</span>
+              <span className="cwn-location">Huntsville West</span>
             </h2>
           </div>
         </div>
