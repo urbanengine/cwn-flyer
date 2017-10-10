@@ -66,6 +66,6 @@ function getDefaultModules() {
 module.exports = {
   srcPath: srcPath,
   publicPath: '/assets/',
-  port: process.env.PORT || 8000,
+  port: process.env.PORT || 3000,
   getDefaultModules: getDefaultModules
 };

@@ -23,9 +23,9 @@ class CurrentScheduleComponent extends React.Component {
   componentWillMount() {
     var that = this;
       fetch('/api/cwnEvents/current')
-      .then(function(res) {
-          return res.json();
-      }).then(function(response) {
+      .then((resp) => {
+          return resp.json();
+      }).then((response) => {
         var slottedEvents = {};
         response.forEach(function(event) {
           var time = event.start_time;

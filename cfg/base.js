@@ -1,6 +1,9 @@
-//'use strict';
+'use strict';
 let path = require('path');
 let defaultSettings = require('./defaults');
+
+// Get our api routes
+const api = require('../server/routes/api');
 
 // Additional npm or bower modules to include in builds
 // Add all foreign plugins you may need into this array
@@ -25,7 +28,11 @@ module.exports = {
     hot: true,
     port: defaultSettings.port,
     publicPath: defaultSettings.publicPath,
-    noInfo: false
+    noInfo: false,
+    setup: function(app) {
+      // Set our api routes
+      app.use('/api', api);
+    }
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
