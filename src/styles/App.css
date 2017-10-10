@@ -25,10 +25,10 @@ a {
 a:hover {
   color:#c1342a;
 }
-/*https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/schedule-bg-2400.jpg*/
+
 .jumbotron {
   padding:2rem 4%;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/schedule-bg-2400.jpg) 50% 50% transparent;
+  background: url(https://s3.us-east-2.amazonaws.com/cwn-images/cwn-flyer-bg-hw.jpg) 50% 50% transparent;
   background-size:cover;
   color:#e8e2d0;
   text-align:center;
@@ -36,7 +36,8 @@ a:hover {
 }
 
 .cwn-logo {
-  max-width:300px;
+  width:300px;
+  max-width:50%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom:2rem;
@@ -171,12 +172,6 @@ a:hover {
   box-shadow: 0 2px 16px rgba(0,0,0,0.1)
 }
 
-@media (max-width:543px) {
-  .workshop-title {
-    font-size: 1.5em;
-  }
-}
-
 .workshop-title {
   letter-spacing: -0.5px;
   line-height: 1.2em;
@@ -186,11 +181,7 @@ a:hover {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.workshop-title>span {
-  box-shadow: inset 0 -0.1em #F96156;
+  -webkit-box-orient: vertical;  
 }
 
 .workshop-icon {
@@ -207,6 +198,8 @@ a:hover {
 
 .workshop-icon i {
   font-size: 5em;
+  width:1em;
+  height:1em;
 }
 
 .group-title {
@@ -227,7 +220,6 @@ a:hover {
   text-transform: uppercase;
   font-weight: bold;
   z-index: 1;
-  margin-left: 4px;
 }
 
 .workshop-time {
@@ -241,7 +233,6 @@ a:hover {
 .workshop-location {
   font-weight: bold;
   font-size:1.2em;
-  margin-left: 4px;
 }
 
 .workshop-location:before {
@@ -256,7 +247,7 @@ a:hover {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;  
 }
 
 .footer-spacer {
@@ -283,6 +274,18 @@ footer.fixed-bottom p {
   }
 }
 
+@media (max-width:543px) {
+  .workshop-title {
+    font-size: 1.25rem;
+  }
+  .group-title, .workshop-time, .workshop-location {
+    font-size: 1rem;
+    line-height: 1rem;
+    display:inline-block;
+    margin-bottom:0;
+  }
+}
+
 
 
 .jumbotron .cwn-sponsors, footer .schedule-url {
@@ -299,73 +302,63 @@ footer.fixed-bottom p {
   }
 }
 
-.workshop-icon {
-    text-align: center;
-}
 
-.workshop-icon i {
-    height: 1em;
-    width: 1em;
-}
 
-.workshop-category {
-    white-space: nowrap;
-}
 
 
 .workshop-updated .workshop-title:before {
-  content:"Updated:";
-  text-decoration: none;
-  display:inline-block;
-  margin-right:4px;
-  vertical-align:text-top;
-  color:#fff;
-  background-color: #f96156;
-  padding:5px;
-  font-size:1rem;
-  line-height:1rem;
+    content:"Updated:";
+    text-decoration: none;
+    display:inline-block;
+    margin-right:4px;
+    vertical-align:text-top;
+    color:#fff;
+    background-color: #f96156;
+    padding:5px;
+    font-size:1rem;
+    line-height:1rem;
 }
 
 .workshop-ended {
-  background:#e5e5e5;
+    background:#e5e5e5;
 }
 .workshop-ended p, .workshop-ended span, .workshop-ended .progress {
-opacity:0.6;
+  opacity:0.6;
 } 
 
 .workshop-canceled {
-  background:#e5e5e5;
+    background:#e5e5e5;
 }
 
 .workshop-canceled p, .workshop-canceled span {
-opacity:0.5;
+  opacity:0.5;
 } 
 
 .workshop-canceled .workshop-title {
-  text-decoration:line-through;
+    text-decoration:line-through;
 }
 
 .workshop-canceled .workshop-title:before {
-  content:"Canceled:";
-  text-decoration: none;
-  display:inline-block;
-  margin-right:5px;
-  vertical-align:text-top;
-  color:#fff;
-  background-color: #f96156;
-  padding:5px;
-  font-size:1rem;
-  line-height:1rem;
+    content:"Canceled:";
+    text-decoration: none;
+    display:inline-block;
+    margin-right:5px;
+    vertical-align:text-top;
+    color:#fff;
+    background-color: #f96156;
+    padding:5px;
+    font-size:1rem;
+    line-height:1rem;
 }
 
 .progress {
-  border-radius: 0;
-  height: 8px;
-  background-color: #f96156;
-  z-index:1;
+    border-radius: 0;
+    height: 8px;
+    background-color: #f96156;
+    z-index:1;
 
 }
 
 .progress-bar {
-  background-color: #c63c32;
+    background-color: #c63c32;
 }

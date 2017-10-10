@@ -72,7 +72,7 @@ class EventItemComponent extends React.Component {
               <i className={`fa fa-${event.icon} fa-4x`}></i>
             </div>
             <h3 className="card-title workshop-title">
-              <span className="underline">{event.title}</span>
+              <span>{event.title}</span>
             </h3>
             <span className="group-title">
               <a href="#">
