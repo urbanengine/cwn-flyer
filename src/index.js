@@ -16,5 +16,5 @@ ReactDOM.render
             <Route exact path="/next" component={NextSchedule}/>
             <Route exact path="/:id" component={DynamicSchedule}/>
           </Switch>
-        </Router>, 
+        </Router>,
     document.getElementById('app'));

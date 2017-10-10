@@ -52,9 +52,9 @@ class EventItemComponent extends React.Component {
 
   render() {
     const event = this.props.event;
-    var cardWorkshopCss = "card workshop";
+    var cardWorkshopCss = 'card workshop';
     if (this.state.ended) {
-      cardWorkshopCss += " workshop-ended";
+      cardWorkshopCss += ' workshop-ended';
     }
 
     var progressBarStyle = {

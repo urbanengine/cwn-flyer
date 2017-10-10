@@ -18,7 +18,7 @@ class JumbotronComponent extends React.Component {
             </h1>
             <p className="cwn-intro">
               CoWorking Night is a free weekly conference where professionals come to learn, connect, and collaborate.
-              <br /> 
+              <br />
               Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
             </p>
             <p className="cwn-sponsors">
@@ -41,4 +41,3 @@ class JumbotronComponent extends React.Component {
 }
 
 export default JumbotronComponent;
-

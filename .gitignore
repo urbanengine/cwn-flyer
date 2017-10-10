@@ -31,6 +31,3 @@ bower_components/
 
 # IDE/Editor data
 .idea
-
-# webpack
-dist
