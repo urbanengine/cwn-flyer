@@ -4,8 +4,6 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
-throw new DOMException();
-
 // Get our api routes
 const api = require('./server/routes/api');
 
