@@ -210,7 +210,6 @@ a:hover {
   font-weight: bold;
   font-size:1.2em;
   z-index:1;
-  margin-left: 4px;
 }
 
 .workshop-category {
@@ -221,6 +220,7 @@ a:hover {
   text-transform: uppercase;
   font-weight: bold;
   z-index: 1;
+  margin-left: 4px;
 }
 
 .workshop-time {
