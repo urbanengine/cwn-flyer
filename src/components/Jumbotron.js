@@ -2,6 +2,7 @@ require('styles/Jumbotron.css');
 
 import React from 'react';
 import Moment from 'react-moment';
+import 'moment-timezone';
 
 class JumbotronComponent extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class JumbotronComponent extends React.Component {
                 CoWorking Night #<span className="cwn-edition-number">{cwnNumber}</span>
               </span>
               <span className="cwn-date-time">
-                <span className="cwn-date"><Moment format="LL">{cwnDate}</Moment></span>
+                <span className="cwn-date"><Moment format="LL" tz="America/Chicago">{cwnDate}</Moment></span>
                 <span className="cwn-time">6‑10pm</span>
               </span>
               <span className="cwn-location">Huntsville West</span>

@@ -3,6 +3,7 @@ require('styles/EventItem.css');
 
 import React from 'react';
 import Moment from 'react-moment';
+import 'moment-timezone';
 
 class EventItemComponent extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class EventItemComponent extends React.Component {
     var progressBarStyle = {
       width: `${Math.ceil(this.state.progress * 100)}%`
     };
-    
+
     return (
         <div className={cardWorkshopCss}>
           <div className="progress">
@@ -81,7 +82,7 @@ class EventItemComponent extends React.Component {
             </span>
             <span className="workshop-category">{event.category}</span>
             <br />
-            <span className="workshop-time"><Moment format="h:mm">{event.start_time}</Moment> - <Moment format="h:mm">{event.end_time}</Moment></span>
+            <span className="workshop-time"><Moment format="h:mm" tz="America/Chicago">{event.start_time}</Moment> - <Moment format="h:mm" tz="America/Chicago">{event.end_time}</Moment></span>
             <span className="workshop-location">{event.room_req} </span>
             <p className="card-text workshop-description">{event.description}</p>
           </div>
