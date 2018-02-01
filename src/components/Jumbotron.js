@@ -8,6 +8,37 @@ class JumbotronComponent extends React.Component {
   render() {
     const cwnDate = this.props.cwnDate;
     const cwnNumber = this.props.cwnNumber;
+    const isBhm = this.props.isBhm != undefined && this.props.isBhm == true;
+    let sponsersAndInfoSection = null;
+    if (isBhm)
+      sponsersAndInfoSection = <div>
+                                <p className="cwn-sponsors">
+                                  <strong>Sponsored by Innvation Depot.<br /> Presented by Urban Engine.</strong>
+                                </p>
+                                <h2 className="cwn-info">
+                                  <span className="bhm-cwn-date-time">
+                                    <span className="cwn-date"><Moment format="LL" tz="America/Chicago">{cwnDate}</Moment></span>
+                                    <span className="cwn-time">6‑10pm</span>
+                                  </span>
+                                  <span className="cwn-location">Innovation Depot</span>
+                                </h2>
+                              </div>;
+    else
+      sponsersAndInfoSection = <div>
+                                <p className="cwn-sponsors">
+                                  <strong>Sponsored by Huntsville West and Hackster.io.<br /> Presented by Urban Engine.</strong>
+                                </p>
+                                <h2 className="cwn-info">
+                                  <span className="cwn-edition">
+                                    CoWorking Night #<span className="cwn-edition-number">{cwnNumber}</span>
+                                  </span>
+                                  <span className="cwn-date-time">
+                                    <span className="cwn-date"><Moment format="LL" tz="America/Chicago">{cwnDate}</Moment></span>
+                                    <span className="cwn-time">6‑10pm</span>
+                                  </span>
+                                  <span className="cwn-location">Huntsville West</span>
+                                </h2>
+                              </div>;
 
     return (
         <div className="jumbotron">
@@ -22,19 +53,7 @@ class JumbotronComponent extends React.Component {
               <br />
               Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
             </p>
-            <p className="cwn-sponsors">
-              <strong>Sponsored by Huntsville West and Hackster.io.<br /> Presented by Urban Engine.</strong>
-            </p>
-            <h2 className="cwn-info">
-              <span className="cwn-edition">
-                CoWorking Night #<span className="cwn-edition-number">{cwnNumber}</span>
-              </span>
-              <span className="cwn-date-time">
-                <span className="cwn-date"><Moment format="LL" tz="America/Chicago">{cwnDate}</Moment></span>
-                <span className="cwn-time">6‑10pm</span>
-              </span>
-              <span className="cwn-location">Huntsville West</span>
-            </h2>
+            {sponsersAndInfoSection}
           </div>
         </div>
     );

@@ -63,7 +63,7 @@ a:hover {
   .cwn-info {
     font-size:1.5rem;
   }
-  .cwn-date-time, .cwn-location {
+  .cwn-date-time, .cwn-location, .bhm-cwn-date-time {
     display: block;
   }
   .cwn-date-time:before, .cwn-location:before {

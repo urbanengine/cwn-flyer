@@ -4,6 +4,7 @@ const router = express.Router();
 // declare axios for making http requests
 const axios = require('axios');
 const baseUrl = 'http://www.openhuntsville.com/api/v1/';
+//const baseUrl = 'http://localhost:3001/api/v1/';
 
 function getCurrentId() {
   return axios.get(`${baseUrl}/thisweeks_cwn_event`, {headers: {"Authorization": process.env.APIKEY}})
@@ -28,6 +29,16 @@ function getNextId() {
       return '';
   });
 }
+
+router.get('/bhm/cwnEvents/current', (req, res) => {
+  axios.get(`${baseUrl}/bhm/cwn_flyer/`, {headers: {"Authorization": process.env.APIKEY}})
+  .then(posts => {
+    res.status(200).json(posts.data);
+  })
+  .catch(error => {
+    res.status(500).send(error)
+  });
+});
 
 router.get('/cwnEvents/current', (req, res) => {
   getCurrentId().then(currentId => {
