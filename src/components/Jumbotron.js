@@ -36,7 +36,7 @@ class JumbotronComponent extends React.Component {
                                     <span className="cwn-date"><Moment format="LL" tz="America/Chicago">{cwnDate}</Moment></span>
                                     <span className="cwn-time">6‑10pm</span>
                                   </span>
-                                  <span className="cwn-location">Huntsville STEAM Works</span>
+                                  <span className="cwn-location">Huntsville West</span>
                                 </h2>
                               </div>;
 
