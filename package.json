@@ -44,7 +44,7 @@
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
-    "moment": "^2.18.1",
+    "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
