@@ -327,7 +327,11 @@ footer.fixed-bottom p {
 }
 .workshop-ended p, .workshop-ended span, .workshop-ended .progress {
   opacity:0.6;
-} 
+}
+
+.workshop-ended .workshop-description {
+  display: none;
+}
 
 .workshop-canceled {
     background:#c5c5c5;
