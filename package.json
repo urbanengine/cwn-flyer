@@ -31,13 +31,17 @@
     "dev": "next",
     "build": "next build",
     "start": "node server.js",
-    "pretty": "prettier --write --tab-width 4 \"./**/*.js\"",
-    "precommit": "lint-staged && npm test"
+    "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
   },
   "lint-staged": {
-      "*.js": [
-          "npm run pretty",
-          "git add"
-      ]
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
