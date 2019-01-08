@@ -1,0 +1,40 @@
+a {
+    color: #f96156;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #c1342a;
+}
+
+.footer-spacer {
+	height: 80px;
+}
+
+@media (min-width: 544px) {
+	.footer-spacer {
+		height: 60px;
+	}
+}
+
+footer.fixed-bottom {
+	background: #000;
+	color: #fff;
+}
+
+footer.fixed-bottom p {
+	margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+	footer.fixed-bottom p {
+		font-size: 1.5rem;
+	}
+}
+
+/* Only on RER signage */
+@media screen and (min-width: 1080px) and (min-height: 1920x) {
+    .cwn-sponsors {
+        display:block;
+    }
+}

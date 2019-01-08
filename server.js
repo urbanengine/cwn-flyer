@@ -1,5 +1,6 @@
 const express = require("express");
 const next = require("next");
+const url = require("url");
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handler = app.getRequestHandler();
@@ -13,10 +14,15 @@ app.prepare()
         });
 
         server.get("/:airportCode", (request, response) => {
-            const actualPage = "/" + reqyestairportCode,
-                queryParams = { airportCode: request.params.airportCode };
+            const airportCode = url.parse(request.url).pathname;
+            const actualPage = "/" + airportCode;
+            console.log("airport code: ", airportCode);
 
-            app.render(request, response, actualPage, queryParams);
+            queryParams = { airportCode: request.params.airportCode };
+
+            console.log("airport code: ", airportCode);
+
+            app.render(request, response, "/city", queryParams);
         });
 
         server.listen(3000, error => {

@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'norwesterregular';
+    src: url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff2') format('woff2'), url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+    font-family: norwesterregular;
+}
+
+.jumbotron {
+    padding: 2rem 4%;
+    background: url(https://s3.us-east-2.amazonaws.com/cwn-images/cwn-flyer-bg-hw.jpg) 50% 50% transparent;
+    background-size: cover;
+    color: #e8e2d0;
+    text-align: center;
+    border-radius: 0;
+}
+
+.cwn-logo {
+    width: 300px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.cwn-intro, .cwn-sponsors {
+    margin-bottom: 2rem;
+}
+
+.cwn-info {
+    font-size: 1.75rem;
+}
+
+.cwn-time:before {
+    content: " - ";
+}
+
+.cwn-location:before {
+    content: " | ";
+}
+
+@media (max-width: 543px) {
+    .cwn-info {
+        font-size: 1.5rem;
+    }
+
+    .cwn-date-time, .cwn-location, .bhm-cwn-date-time {
+        display: block;
+    }
+
+    .cwn-date-time:before, .cwn-location:before {
+        content: "";
+    }
+}
+
+/* Only on RER signage */
+@media screen and (min-width: 1080px) and (min-height: 1920x) {
+    .cwn-intro, .cwn-location {
+        display: none;
+    }
+}
