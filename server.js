@@ -1,28 +1,53 @@
 const express = require("express");
 const next = require("next");
-const url = require("url");
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handler = app.getRequestHandler();
+const Error = require("next/error");
 
 app.prepare()
     .then(() => {
         const server = express();
 
-        server.get("*", (request, response) => {
-            return handler(request, response);
+        server.get("/:airportCode", (request, response) => {
+            const supportedCities = [
+                {
+                    city: "Huntsville",
+                    airportCode: "hsv",
+                    id: 2
+                },
+                {
+                    city: "Birmingham",
+                    airportCode: "bhm",
+                    id: 3
+                }
+            ];
+
+            var match = supportedCities.filter(function(city) {
+                if (city.airportCode === request.params.airportCode) {
+                    return city;
+                }
+            });
+
+            if (match !== undefined && match.length !== 0) {
+                // user visited a city we support
+                app.render(request, response, "/city", {
+                    ...request.query,
+                    ...request.params
+                });
+            } else {
+                // user visited a city we don't yet support
+                response.statusCode = 404;
+                app.render(request, response, "/_error", {});
+            }
         });
 
-        server.get("/:airportCode", (request, response) => {
-            const airportCode = url.parse(request.url).pathname;
-            const actualPage = "/" + airportCode;
-            console.log("airport code: ", airportCode);
+        server.get("/api/schedule/coworkingnight", (request, response) => {
+            console.log("ready to fetch the schedule");
+        });
 
-            queryParams = { airportCode: request.params.airportCode };
-
-            console.log("airport code: ", airportCode);
-
-            app.render(request, response, "/city", queryParams);
+        server.get("*", (request, response) => {
+            return handler(request, response);
         });
 
         server.listen(3000, error => {

@@ -5,18 +5,20 @@ import Schedule from "../components/Schedule";
 const City = props => (
     <Layout>
         <title>CoWorking Night Flyer</title>
-        <Schedule />
     </Layout>
 );
 
-City.getInitialProps = async function() {
-    const response = await fetch("/api/schedule/coworkingnight");
-    const data = await response.json();
+City.getInitialProps = async function({ request }) {
+    const baseUrl = request
+        ? `${request.protocol}://${request.get("Host")}`
+        : "";
+    //const response = await fetch(baseUrl + '/api/schedule/coworkingnight');
+    //const data = await response.json();
 
-    console.log(`Show data fetched. Count: ${data.length}`);
+    //console.log(`Show data fetched. Count: ${data.length}`);
 
     return {
-        shows: data
+        shows: {}
     };
 };
 
