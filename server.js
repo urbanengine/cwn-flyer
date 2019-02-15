@@ -31,22 +31,12 @@ app.prepare()
 
             if ( match !== undefined && match.length !== 0 ) {
                 // user visited a city we support
-                app.render( request, response, "/city", { ...request.query, ...request.params } );
+                app.render( request, response, "/city", { ...request.query, ...request.params, city.id } );
             } else {
                 // user visited a city we don't yet support
                 response.statusCode = 404;
                 app.render( request, response, "/_error", { } );
             }
-        } );
-
-        server.get( "/api/schedule/coworkingnight", ( request, response ) => {
-            // construct the url for the endpoint that will give us the schedule
-            const endpoint = `${process.env.hostname}/api/v2/flyer/group/${groupId}`;
-            
-            const response = await fetch( endpoint );
-            
-            // return the results back to the client
-            return await response.json();
         } );
 
         server.get( "*", ( request, response ) => {

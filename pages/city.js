@@ -8,12 +8,18 @@ const City = props => (
     </Layout>
 );
 
-City.getInitialProps = async function( { request } ) {
-    const baseUrl = request ? `${request.protocol}://${request.get( "Host" )}` : "";
-    const response = await fetch( baseUrl + '/api/schedule/coworkingnight' );
-    const data = await response.json();
+City.getInitialProps = async function( request ) {
+    // construct the url for the endpoint that will give us the schedule
+    const endpoint = `${process.env.hostname}/api/v2/flyer/group/${request.query.groupId}`;
 
-    console.log( `Show data fetched. Count: ${data.length}` );
+    fetch( endpoint, { headers: { 'Authorization': process.env.APIKEY } } )
+        .then( function( response ) {
+            return response.json();
+        } )
+        .then(function( json ) {
+            console.log(`json: ${json}`);
+            console.log( `Show data fetched. Count: ${json.length}` );
+        } );
 
     return {
         shows: {}
