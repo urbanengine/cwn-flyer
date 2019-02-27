@@ -1,0 +1,22 @@
+{
+    "name": "cwn-flyer",
+    "scripts": {},
+    "env": {
+      "HOSTNAME": "https://openhuntsville-development.herokuapp.com",
+      "APIKEY": {
+        "required": true
+      },
+      "NODE_ENV": "production"
+    },
+    "formation": {
+      "web": {
+        "quantity": 1
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ],
+    "stack": "heroku-18"
+  }
