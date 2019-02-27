@@ -32,11 +32,12 @@
     "prettier": "^1.15.3"
   },
   "scripts": {
-    "dev": "next",
-    "heroku-postbuild": "heroku-nextjs-build",
     "build": "next build",
-    "start": "node server.js -p $PORT",
-    "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
+    "dev": "next",
+    "export": "npm run build && next export",
+    "heroku-postbuild": "heroku-nextjs-build",
+    "pretty": "prettier --write --tab-width 4 \"./**/*.js\"",
+    "start": "node server.js -p $PORT"    
   },
   "engines": {
     "node": "11.9.0",
