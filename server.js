@@ -23,15 +23,18 @@ app.prepare()
                 }
             ];
 
+            let groupId = -1;
+
             var match = supportedCities.filter( function( city ) {
                 if ( city.airportCode === request.params.airportCode ) {
+                    groupId = city.id;
                     return city;
                 }
             });
 
             if ( match !== undefined && match.length !== 0 ) {
                 // user visited a city we support
-                app.render( request, response, "/city", { ...request.query, ...request.params, city.id } );
+                app.render( request, response, "/city", { ...request.query, ...request.params, groupId } );
             } else {
                 // user visited a city we don't yet support
                 response.statusCode = 404;
