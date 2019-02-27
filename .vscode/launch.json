@@ -5,30 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
-            "request": "launch",
             "name": "Next: Chrome",
+            "request": "launch",
+            "type": "chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
         },
         {
-            "type": "node",
-            "request": "launch",
+            "console": "integratedTerminal",
             "name": "Next: Node",
-            //"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
-            "runtimeExecutable": "node",
-            "runtimeArgs": [
-                //"--inspect"
-                "server.js"
-            ],
             "port": 3000,
-            "console": "integratedTerminal"
+            //"program": "${workspaceFolder}/server.js",
+            "request": "launch",
+            //"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
+            "runtimeExecutable": "next",
+            "runtimeArgs": [
+                "--inspect"
+            ],
+            "type": "node"
         }
     ],
     "compounds": [
         {
-            "name": "Next: Full",
-            "configurations": ["Next: Node", "Next: Chrome"]
+            "configurations": ["Next: Node", "Next: Chrome"],
+            "name": "Next: Full"            
         }
     ]
 }
