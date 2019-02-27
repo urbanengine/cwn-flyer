@@ -29,6 +29,7 @@
   },
   "scripts": {
     "dev": "next",
+    "heroku-postbuild": "next build",
     "build": "next build",
     "start": "node server.js",
     "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
