@@ -31,7 +31,7 @@
     "dev": "next",
     "heroku-postbuild": "next build",
     "build": "next build",
-    "start": "node server.js",
+    "start": "node server.js -p $PORT",
     "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
   }
 }
