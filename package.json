@@ -39,8 +39,8 @@
     "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
   },
   "engines": {
-    "node": ">11.9.0",
-    "npm": ">6.8.0",
-    "yarn": ">1.13.0"
+    "node": "11.9.0",
+    "npm": "6.8.0",
+    "yarn": "1.13.0"
   }
 }
