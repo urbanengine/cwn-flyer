@@ -16,6 +16,7 @@
   "homepage": "https://cwnflyer.com/",
   "description": "",
   "dependencies": {
+    "@mars/heroku-nextjs-build": "^2.0.0",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.19.1",
@@ -32,9 +33,14 @@
   },
   "scripts": {
     "dev": "next",
-    "heroku-postbuild": "next build",
+    "heroku-postbuild": "heroku-nextjs-build",
     "build": "next build",
     "start": "node server.js -p $PORT",
     "pretty": "prettier --write --tab-width 4 \"./**/*.js\""
+  },
+  "engines": {
+    "node": ">11.9.0",
+    "npm": ">6.8.0",
+    "yarn": ">1.13.0"
   }
 }
