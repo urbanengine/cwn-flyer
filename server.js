@@ -3,6 +3,7 @@ const next = require( "next" );
 const dev = process.env.NODE_ENV !== "production";
 const app = next( { dev } );
 const handler = app.getRequestHandler();
+const port = process.env.PORT || 3000;
 
 app.prepare()
     .then(() => {
@@ -45,10 +46,10 @@ app.prepare()
             return handler( request, response );
         } );
 
-        server.listen( 3000, error => {
+        server.listen( port, error => {
             if ( error ) throw error;
 
-            console.log( "> Ready on http://localhost:3000" );
+            console.log( `> Ready on http://localhost:${port}` );
         } );
     } )
     .catch( exception => {
