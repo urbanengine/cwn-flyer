@@ -718,11 +718,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@mars/heroku-nextjs-build@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@mars/heroku-nextjs-build/-/heroku-nextjs-build-2.0.0.tgz#84d36c35b5987db93e8e6d5914d0c3bc0cb9e9fb"
-  integrity sha1-hNNsNbWYfbk+jm1ZFNDDvAy56fs=
-
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
