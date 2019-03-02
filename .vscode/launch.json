@@ -7,6 +7,9 @@
         {
             "name": "Next: Chrome",
             "request": "launch",
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${webRoot}/*"
+            },
             "type": "chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
@@ -14,14 +17,17 @@
         {
             "console": "integratedTerminal",
             "name": "Next: Node",
-            "port": 3000,
-            //"program": "${workspaceFolder}/server.js",
+            "port": 9229,
+            "program": "${workspaceFolder}/server.js",
             "request": "launch",
-            //"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
-            "runtimeExecutable": "next",
+            "runtimeExecutable": "npx",
             "runtimeArgs": [
+                "next",
                 "--inspect"
             ],
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${workspaceFolder}/*"
+            },
             "type": "node"
         }
     ],
