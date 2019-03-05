@@ -4,7 +4,7 @@ const Schedule = props => {
     if ( isEmpty( props.cwn ) ) {
         return (
             <div>
-                <h1>{props.message}</h1>
+                <h3 className="error-message">{props.message}</h3>
             </div>
         );
     }
@@ -12,7 +12,7 @@ const Schedule = props => {
         return (
             <div>
                 { console.log( `schedule props: ${JSON.stringify( props )}` ) }
-                <h1>{props.message}</h1>
+                <h3 className="error-message">{props.message}</h3>
             </div>
         );
     }
@@ -21,7 +21,7 @@ const Schedule = props => {
             <div>
                 { console.log( `schedule: ${JSON.stringify( props )}` ) }
                 
-                <h1>Time to start rendering workshops</h1>
+                <h3 className="error-message">Time to start rendering workshops</h3>
             </div>
         );
     }
