@@ -1,10 +1,17 @@
 import Event from "./Event";
 
 const Schedule = props => {
+    const errorMessageStyle = {
+        textAlign: 'center',
+        margin: '3rem auto',
+        width: '80%'
+    };
+
     if ( isEmpty( props.cwn ) ) {
         return (
             <div>
-                <h3 className="error-message">{props.message}</h3>
+                { console.log( `schedule props: ${JSON.stringify( props )}` ) }
+                <h3 style={errorMessageStyle} className="error-message">{props.message}</h3>
             </div>
         );
     }
@@ -12,20 +19,18 @@ const Schedule = props => {
         return (
             <div>
                 { console.log( `schedule props: ${JSON.stringify( props )}` ) }
-                <h3 className="error-message">{props.message}</h3>
+                <h3 style={errorMessageStyle} className="error-message">{props.message}</h3>
             </div>
         );
     }
     else {
         return (
-            <div>
-                { console.log( `schedule: ${JSON.stringify( props )}` ) }
-                
-                <h3 className="error-message">Time to start rendering workshops</h3>
+            <div>                
+                <h3 style={errorMessageStyle} className="error-message">Time to start rendering workshops</h3>
             </div>
         );
     }
-}
+};
 
 
 function isEmpty( obj ) {
