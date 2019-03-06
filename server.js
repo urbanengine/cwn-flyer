@@ -12,14 +12,24 @@ app.prepare()
         server.get("/:airportCode", ( request, response ) => {
             const supportedCities = [
                 {
-                    city: "Huntsville",
                     airportCode: "hsv",
-                    id: 2
+                    city: "Huntsville",
+                    id: 2,
+                    sponsor: {
+                        name: "CommentSold",
+                        url: "https://commentsold.com"
+                    },
+                    venue: "Huntsville West"
                 },
                 {
-                    city: "Birmingham",
                     airportCode: "bhm",
-                    id: 3
+                    city: "Birmingham",
+                    id: 3,
+                    sponsor: {
+                        name: "Innovation Depot",
+                        url: "https://innovationdepot.org"
+                    },
+                    venue: "Innovation Depot"
                 }
             ];
 
