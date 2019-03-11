@@ -1,6 +1,28 @@
 import Jumbotron from "./Jumbotron";
 import Sponsors from "./Sponsors";
 import Head from "next/head";
+import css from 'styled-jsx/css';
+
+const styles = css`
+    body {
+        font-family: "Raleway", sans-serif;
+        background: #ebe6db;
+    }
+
+    @font-face {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 400;
+        src: local("Raleway"), local("Raleway-Regular"), url(https://fonts.gstatic.com/s/raleway/v11/bIcY3_3JNqUVRAQQRNVteQ.ttf) format("truetype")
+    }
+
+    @font-face {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 700;
+        src: local("Raleway Bold"), local("Raleway-Bold"), url(https://fonts.gstatic.com/s/raleway/v11/JbtMzqLaYbbbCL9X6EvaIy3USBnSvpkopQaUR-2r7iU.ttf) format("truetype")
+    }
+`;
 
 const Layout = props => (
     <div>
@@ -30,14 +52,9 @@ const Layout = props => (
         <footer>
             <Sponsors />
         </footer>
-    </div>
-);
 
-<style jsx>{`
-    body {
-        font-family: "Raleway", sans-serif;
-        background: #ebe6db;
-    }
-`}</style>;
+        <style jsx>{styles}</style>
+    </div>
+)
 
 export default Layout;

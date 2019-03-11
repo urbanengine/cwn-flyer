@@ -13,16 +13,8 @@ const Jumbotron = props => (
                 key="bootstrap"
             />
 
-            <link
-                rel="stylesheet"
-                href="/static/jumbotron.css"
-                key="jumbotron:css"
-            />
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Raleway"
-                key="raleway:font"
-            />
+            <link rel="stylesheet" href="/static/jumbotron.css" key="jumbotron:css" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
         </Head>
         <div className="jumbotron">
             <div className="">
