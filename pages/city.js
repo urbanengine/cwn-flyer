@@ -10,6 +10,9 @@ class City extends Component {
     }
 
     render() {
+        console.log( `city props.message: ${JSON.stringify(this.props.message)}`);
+        console.log( `city props.cwn: ${JSON.stringify(this.props.cwn)}`);
+
         return (
             <Provider value={{
                     message: this.props.message,

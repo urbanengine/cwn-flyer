@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Event from "./Event";
 import Consumer from './Provider';
 
+const isEmpty = ( value ) => {
+    return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 );
+}
+
 class Schedule extends Component {
     constructor( props ) {
         super( props );
     }
-
-    // isEmpty( value ) {
-    //     return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 );
-    // }
 
     render() {
         const errorMessageStyle = {
@@ -17,16 +17,22 @@ class Schedule extends Component {
             margin: '3rem auto',
             width: '80%'
         };
-        
-        // I need to somehow use the data from the context in this condition
-        //const showErrorMessage = this.isEmpty( context.cwn ) || ( !this.isEmpty( context.cwn ) && ( context.cwn.workshops === undefined || context.cwn.workshops.length == 0 ) );
 
         return (
             <Consumer>
-                {(context) => (
-                    // This should only be shown if showErrorMessage above returns true
-                    <h3 style={errorMessageStyle} className="error-message">{context.message}</h3>
-                )}
+                {(context) => {
+                    var cwn = context.state.cwn;
+                    console( context.state );
+                
+                    const showErrorMessage = isEmpty( cwn ) || ( !isEmpty( cwn ) && ( isEmpty( cwn.workshops ) || isEmpty( cwn.workshops.length ) ) ) ? true: false;
+
+                    console.log( `showErrorMessage: ${showErrorMessage}` );
+                    
+                    return (
+                        // This should only be shown if showErrorMessage above returns true
+                        showErrorMessage && <h3 style={errorMessageStyle} className="error-message">{context.state.message}</h3>
+                    )
+                } }
 
                 {/* Now show data for each event */}
             </Consumer>
