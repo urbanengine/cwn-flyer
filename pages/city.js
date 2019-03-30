@@ -1,30 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Schedule from '../components/Schedule';
-import Provider from '../components/Provider';
+import FlyerContext from '../components/FlyerContext';
 
-class City extends Component {
-    constructor( props ) {
-        super( props );
-    }
+const City = ( props ) => {
 
-    render() {
-        console.log( `city props.message: ${JSON.stringify(this.props.message)}`);
-        console.log( `city props.cwn: ${JSON.stringify(this.props.cwn)}`);
+    const { updateSchedule } = useContext( FlyerContext );
 
-        return (
-            <Provider value={{
-                    message: this.props.message,
-                    cwn: this.props.cwn
-                }}>
-                <Layout>
-                    <title>CoWorking Night Flyer</title>
-                    <Schedule />
-                </Layout>
-            </Provider>
-        )
-    }
+    updateSchedule( props.message, props.cwn );
+
+    return (
+        <Layout>
+            <title>CoWorking Night Flyer</title>
+            <Schedule />
+        </Layout>
+    )
 }
 
 City.getInitialProps = async function( context ) {

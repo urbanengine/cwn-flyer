@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import Event from "./Event";
-import Consumer from './Provider';
+import { useContext } from 'react';
+import FlyerContext from './FlyerContext';
 
 const isEmpty = ( value ) => {
     return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 );
 }
 
 class Schedule extends Component {
-    constructor( props ) {
-        super( props );
-    }
 
     render() {
         const errorMessageStyle = {
@@ -18,9 +15,14 @@ class Schedule extends Component {
             width: '80%'
         };
 
+        const { messageValue, cwnValue, updateSchedule} = useContext( FlyerContext );
+
         return (
             <Consumer>
                 {(context) => {
+                    console.log( `message value: ${messageValue}` );
+                    console.log( `cwn value: ${cwnValue}` );
+
                     var cwn = context.state.cwn;
                     console( context.state );
                 
