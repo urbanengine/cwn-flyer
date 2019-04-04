@@ -1,33 +1,49 @@
-import React, { Component, useContext } from 'react';
+import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Schedule from '../components/Schedule';
 import FlyerContext from '../components/FlyerContext';
 
-const City = ( props ) => {
+class City extends Component {
 
-    const { updateSchedule } = useContext( FlyerContext );
+    constructor( props ) {
+        super( props );
+    }
 
-    updateSchedule( props.message, props.cwn );
-
-    return (
-        <Layout>
-            <title>CoWorking Night Flyer</title>
-            <Schedule />
-        </Layout>
-    )
-}
-
-City.getInitialProps = async function( context ) {
-    // construct the url for the endpoint that will give us the schedule
-    const endpoint = `${process.env.HOSTNAME}/api/v2/flyer/group/${context.query.groupId}`;
-    const response = await fetch( endpoint, { headers: { 'Authorization': process.env.APIKEY } } );
-    const json = await response.json();
-
-    return {
-        message: json.message,
-        cwn: json.cwn
+    state = {
+        message: '',
+        cwn: {}
     };
-};
+
+    static async getInitialProps ( context ) {
+        // construct the url for the endpoint that will give us the schedule
+        const endpoint = `${process.env.HOSTNAME}/api/v2/flyer/group/${context.query.groupId}`;
+        const response = await fetch( endpoint, { headers: { 'Authorization': process.env.APIKEY } } );
+        const json = await response.json();
+    
+        return {
+            message: json.message,
+            cwn: json.cwn
+        };
+    }
+
+    componentWillMount() {
+        this.setState( { 
+            message: this.props.message,
+            cwn: this.props.cwn        
+        } );
+    }
+
+    render() {
+        return (
+            <FlyerContext.Provider value={ { state: this.state } }>
+                <Layout>
+                    <title>CoWorking Night Flyer</title>
+                    <Schedule />
+                </Layout>
+            </FlyerContext.Provider>
+        )
+    }
+}
 
 export default City;

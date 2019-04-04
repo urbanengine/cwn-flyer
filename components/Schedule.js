@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { useContext } from 'react';
 import FlyerContext from './FlyerContext';
 
 const isEmpty = ( value ) => {
@@ -15,20 +14,13 @@ class Schedule extends Component {
             width: '80%'
         };
 
-        const { messageValue, cwnValue, updateSchedule} = useContext( FlyerContext );
-
         return (
-            <Consumer>
+            <FlyerContext.Consumer>
                 {(context) => {
-                    console.log( `message value: ${messageValue}` );
-                    console.log( `cwn value: ${cwnValue}` );
-
-                    var cwn = context.state.cwn;
-                    console( context.state );
+                    const cwn = context.state.cwn;
+                    console.log( `schedule: ${ JSON.stringify( context.state )}` );
                 
                     const showErrorMessage = isEmpty( cwn ) || ( !isEmpty( cwn ) && ( isEmpty( cwn.workshops ) || isEmpty( cwn.workshops.length ) ) ) ? true: false;
-
-                    console.log( `showErrorMessage: ${showErrorMessage}` );
                     
                     return (
                         // This should only be shown if showErrorMessage above returns true
@@ -37,7 +29,7 @@ class Schedule extends Component {
                 } }
 
                 {/* Now show data for each event */}
-            </Consumer>
+            </FlyerContext.Consumer>
         );
     }
 }
