@@ -4,7 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+#- master
+- switch-to-nextjs
 
 pool:
   vmImage: 'Ubuntu-16.04'
