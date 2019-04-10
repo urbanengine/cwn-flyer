@@ -6,6 +6,7 @@
 trigger:
 #- master
 - switch-to-nextjs
+- greenkeeper/*
 
 pool:
   vmImage: 'Ubuntu-16.04'
