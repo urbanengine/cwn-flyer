@@ -28,9 +28,9 @@
     "react-moment": "^0.8.4"
   },
   "scripts": {
-    "build": "next build",
+    "dist": "next build",
     "dev": "next",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run dist",
     "start": "node server.js -p $PORT"
   },
   "engines": {
