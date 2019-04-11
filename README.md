@@ -1,4 +1,4 @@
-# CoWorking Night Flyer [![(License)](https://img.shields.io/github/license/urbanengine/cwn-flyer.svg)](https://github.com/urbanengine/cwn-flyer/blob/master/LICENSE)
+# CoWorking Night Flyer [![(License)](https://img.shields.io/github/license/urbanengine/cwn-flyer.svg)](https://github.com/urbanengine/cwn-flyer/blob/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/urbanengine/cwn-flyer.svg)](https://greenkeeper.io/)
 
 cwn-flyer is a small ReactJS application built for Urban Engine. The goal of this project is to show each week's list of workshops in a clean, modern interface.
 
