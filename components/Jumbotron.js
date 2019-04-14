@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Head from "next/head";
 import Moment from "react-moment";
-import "moment-timezone";
+import moment from "moment-timezone";
 import FlyerContext from './FlyerContext';
 
 class Jumbotron extends Component {
@@ -44,6 +44,7 @@ class Jumbotron extends Component {
                         <FlyerContext.Consumer>
                             {(context) => {
                                 const cwn = context.state.cwn;
+                                console.log( `cwn: ${ JSON.stringify( cwn ) }` );
 
                                 return (
                                     <div>
@@ -54,9 +55,8 @@ class Jumbotron extends Component {
                                                         { cwn.start_time }
                                                     </Moment>
                                                 </span>
-                                                <span className="cwn-time">6‑10pm</span>
                                             </span>
-                                            <span className="cwn-location">Huntsville West</span>
+                                            <span className="cwn-location">{ cwn.location ? cwn.location : "Huntsville West" }</span>
                                         </h2>
                                     </div>
                                 )

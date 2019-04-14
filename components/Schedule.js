@@ -17,6 +17,7 @@ class Schedule extends Component {
         return (
             <FlyerContext.Consumer>
                 {(context) => {
+                    console.log( `context: ${ JSON.stringify(context) }` );
                     const cwn = context.state.cwn;
                     console.log( `schedule: ${ JSON.stringify( context.state )}` );
                 

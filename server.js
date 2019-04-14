@@ -8,43 +8,61 @@ const port = process.env.PORT || 3000;
 app.prepare()
     .then(() => {
         const server = express();
+        const supportedCities = [
+            {
+                airportCode: "hsv",
+                city: "Huntsville",
+                id: 2,
+                sponsor: {
+                    name: "CommentSold",
+                    url: "https://commentsold.com"
+                },
+                venue: "Huntsville West"
+            },
+            {
+                airportCode: "bhm",
+                city: "Birmingham",
+                id: 54,
+                sponsor: {
+                    name: "Innovation Depot",
+                    url: "https://innovationdepot.org"
+                },
+                venue: "Innovation Depot"
+            }
+        ];
+
+        server.get("/", ( request, response ) => {
+            let city = {};
+            const match = supportedCities.filter( function( cityInfo ) {
+                if ( cityInfo.airportCode === "hsv" ) {
+                    city = cityInfo;
+                    return cityInfo;
+                }
+            } );
+
+            if ( match !== undefined && match.length !== 0 ) {
+                // We want to render the Huntsville schedule by default
+                app.render( request, response, "/city", { ...request.query, ...request.params, city } );
+            } else {
+                // user visited a city we don't yet support
+                response.statusCode = 404;
+                app.render( request, response, "/_error", { } );
+            }
+        } );
+
 
         server.get("/:airportCode", ( request, response ) => {
-            const supportedCities = [
-                {
-                    airportCode: "hsv",
-                    city: "Huntsville",
-                    id: 2,
-                    sponsor: {
-                        name: "CommentSold",
-                        url: "https://commentsold.com"
-                    },
-                    venue: "Huntsville West"
-                },
-                {
-                    airportCode: "bhm",
-                    city: "Birmingham",
-                    id: 3,
-                    sponsor: {
-                        name: "Innovation Depot",
-                        url: "https://innovationdepot.org"
-                    },
-                    venue: "Innovation Depot"
-                }
-            ];
-
-            let groupId = -1;
-
-            var match = supportedCities.filter( function( city ) {
-                if ( city.airportCode === request.params.airportCode ) {
-                    groupId = city.id;
-                    return city;
+            let city = {};
+            const match = supportedCities.filter( function( cityInfo ) {
+                if ( cityInfo.airportCode === request.params.airportCode ) {
+                    city = cityInfo;
+                    return cityInfo;
                 }
             });
 
             if ( match !== undefined && match.length !== 0 ) {
                 // user visited a city we support
-                app.render( request, response, "/city", { ...request.query, ...request.params, groupId } );
+                app.render( request, response, "/city", { ...request.query, ...request.params, city } );
             } else {
                 // user visited a city we don't yet support
                 response.statusCode = 404;
