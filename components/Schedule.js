@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FlyerContext from './FlyerContext';
+import TimeSlot from './TimeSlot';
 
 const isEmpty = ( value ) => {
     return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 );
@@ -17,19 +18,48 @@ class Schedule extends Component {
         return (
             <FlyerContext.Consumer>
                 {(context) => {
-                    console.log( `context: ${ JSON.stringify(context) }` );
                     const cwn = context.state.cwn;
-                    console.log( `schedule: ${ JSON.stringify( context.state )}` );
                 
-                    const showErrorMessage = isEmpty( cwn ) || ( !isEmpty( cwn ) && ( isEmpty( cwn.workshops ) || isEmpty( cwn.workshops.length ) ) ) ? true: false;
-                    
-                    return (
-                        // This should only be shown if showErrorMessage above returns true
-                        showErrorMessage && <h3 style={errorMessageStyle} className="error-message">{context.state.message}</h3>
-                    )
-                } }
+                    const showErrorMessage = isEmpty( cwn ) || ( isEmpty( cwn ) && ( isEmpty( cwn.workshops ) || isEmpty( cwn.workshops.length ) ) ) ? true: false;
 
-                {/* Now show data for each event */}
+                    // This should only be shown if showErrorMessage above returns true
+                    if ( showErrorMessage ) {
+                        return <h3 style={errorMessageStyle} className="error-message">{context.state.message}</h3>
+                    }
+                    else {
+                        var timeSlots = {};
+                        
+                        // Create an object where each property is an array of events based on the start_time
+                        // The properties key will match the start time of the events within the array
+                        cwn.workshops.forEach(function( workshop ) {
+                            var startTime = workshop.start_time;
+                            
+                            if ( timeSlots[ startTime ] == undefined ) {
+                                timeSlots[ startTime ] = [];
+                            }
+
+                            timeSlots[ startTime ].push( workshop );
+                        });
+
+                        // Grab the start times for each time slot so we can associate the time to the timeslot
+                        const startTimes = Object.keys( timeSlots );
+
+                        // In order to show the events in chronological order we first need to sort them by their start time.
+                        startTimes.sort();
+
+                        const timeSlotList = startTimes.map( ( startTime, index ) =>
+                            // This key will be the only time we don't use the Context API because we need to associate each timeslot with a time up front.
+                            
+                            <TimeSlot key={index} startTime={startTime} />
+                        );
+
+                        return (
+                            <div className="container my-2 cwn-schedule">
+                                { timeSlotList }
+                            </div>
+                        )
+                    }
+                } }
             </FlyerContext.Consumer>
         );
     }
