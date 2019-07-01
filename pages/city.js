@@ -17,9 +17,6 @@ class City extends Component {
 
     static async getInitialProps ( context ) {
         // construct the url for the endpoint that will give us the schedule
-
-        console.log( context.query );
-
         const endpoint = `${process.env.HOSTNAME}/api/v2/flyer/group/${context.query.city.id}`;
         const response = await fetch( endpoint, { headers: { 'Authorization': process.env.APIKEY } } );
         const json = await response.json();

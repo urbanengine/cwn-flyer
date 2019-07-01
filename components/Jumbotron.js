@@ -44,7 +44,6 @@ class Jumbotron extends Component {
                         <FlyerContext.Consumer>
                             {(context) => {
                                 const cwn = context.state.cwn;
-                                console.log( `cwn: ${ JSON.stringify( cwn ) }` );
 
                                 return (
                                     <div>
