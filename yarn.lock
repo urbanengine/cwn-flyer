@@ -4181,10 +4181,10 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
   integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
 
-react-moment@^0.6.5:
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.6.9.tgz#f13a0ccedaf65b5fb8b1467d9f91c5346d74c3e2"
-  integrity sha1-8ToMztr2W1+4sUZ9n5HFNG10w+I=
+react-moment@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.3.tgz#88548e2cb96dc2b37ea7ceecf28955a646eafdd3"
+  integrity sha512-NW+0azYvHP6nKH8SN6Zbm38QVe/v+Bgm5UoosWFtFuC8tUkHAG+VWdLivXj8NMrzHeNqt9OYy4ikVM1ZQaB+3w==
 
 react-router-dom@^4.2.2:
   version "4.3.1"
