@@ -20,17 +20,19 @@ class City extends Component {
         const endpoint = `${process.env.HOSTNAME}/api/v2/flyer/group/${context.query.city.id}`;
         const response = await fetch( endpoint, { headers: { 'Authorization': process.env.APIKEY } } );
         const json = await response.json();
-    
+
         return {
             message: json.message,
-            cwn: json.cwn
+            cwn: json.cwn,
+            city: context.query.city
         };
     }
 
     componentWillMount() {
         this.setState( { 
             message: this.props.message,
-            cwn: this.props.cwn
+            cwn: this.props.cwn,
+            city: this.props.city
         } );
     }
 

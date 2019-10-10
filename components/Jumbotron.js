@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Head from "next/head";
 import Moment from "react-moment";
-import moment from "moment-timezone";
 import FlyerContext from './FlyerContext';
 
 class Jumbotron extends Component {
@@ -21,6 +20,12 @@ class Jumbotron extends Component {
                         key="bootstrap"
                     />
 
+                    <link
+                        rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.css"
+                        key="fontawesome"
+                    />
+
                     <link rel="stylesheet" href="/static/jumbotron.css" key="jumbotron:css" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
@@ -29,7 +34,7 @@ class Jumbotron extends Component {
                         <h1 className="cwn-logo">
                             <a href="https://coworkingnight.org">
                                 <img
-                                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/cwn-logo-light-fullnowatermark.svg"
+                                    src="/static/images/cwn-logo-light-fullnowatermark.svg"
                                     alt="CoWorking Night - Learn. Connect. Collaborate."
                                 />
                             </a>
@@ -55,7 +60,7 @@ class Jumbotron extends Component {
                                                     </Moment>
                                                 </span>
                                             </span>
-                                            <span className="cwn-location">{ cwn.location ? cwn.location : "Huntsville West" }</span>
+                                            <span className="cwn-location">{ cwn.location ? cwn.location : "Not Available" }</span>
                                         </h2>
                                     </div>
                                 )

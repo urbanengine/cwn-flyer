@@ -32,8 +32,16 @@ footer.fixed-bottom p {
 	}
 }
 
+.jumbotron .cwn-sponsors, footer .schedule-url {
+    display:none;
+}
+
 /* Only on RER signage */
 @media screen and (min-width: 1080px) and (min-height: 1920x) {
+    .cwn-intro, .cwn-location {
+        display:none;
+    }
+
     .cwn-sponsors {
         display:block;
     }

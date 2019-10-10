@@ -1,3 +1,17 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #EBE6DB;
+}
+  
+a {
+    color:#F96156;
+    font-weight:bold;
+}
+
+a:hover {
+    color:#c1342a;
+}
+
 @font-face {
     font-family: 'norwesterregular';
     src: url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff2') format('woff2'), url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff') format('woff');
@@ -36,7 +50,7 @@ h1, h2, h3, h4 {
 
 .cwn-info {
     font-size: 1.75rem;
-}
+}  
 
 .cwn-time:before {
     content: " - ";

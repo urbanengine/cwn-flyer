@@ -31,6 +31,7 @@ app.prepare()
             }
         ];
 
+        // Show Huntsville's schedule on the home page
         server.get("/", ( request, response ) => {
             let city = {};
             const match = supportedCities.filter( function( cityInfo ) {
@@ -50,7 +51,7 @@ app.prepare()
             }
         } );
 
-
+        // Show us the schedule for the city given a specific airport code
         server.get("/:airportCode", ( request, response ) => {
             let city = {};
             const match = supportedCities.filter( function( cityInfo ) {
@@ -70,6 +71,7 @@ app.prepare()
             }
         } );
 
+        // Handle all other requests
         server.get( "*", ( request, response ) => {
             return handler( request, response );
         } );

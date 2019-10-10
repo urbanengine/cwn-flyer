@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Head from "next/head";
 import FlyerContext from './FlyerContext';
 import TimeSlot from './TimeSlot';
 
 const isEmpty = ( value ) => {
-    return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 );
+    return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 ) || ( JSON.stringify( value ) === '{}');
 }
 
 class Schedule extends Component {
@@ -49,13 +50,17 @@ class Schedule extends Component {
 
                         const timeSlotList = startTimes.map( ( startTime, index ) =>
                             // This key will be the only time we don't use the Context API because we need to associate each timeslot with a time up front.
-                            
                             <TimeSlot key={index} startTime={startTime} />
                         );
 
                         return (
-                            <div className="container my-2 cwn-schedule">
-                                { timeSlotList }
+                            <div>
+                                <Head>
+                                    <link rel="stylesheet" href="/static/workshopCard.css" key="workshopCard:css" />
+                                </Head>
+                                <div className="container my-2 cwn-schedule">
+                                    { timeSlotList }
+                                </div>
                             </div>
                         )
                     }
