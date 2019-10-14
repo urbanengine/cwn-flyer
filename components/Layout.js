@@ -44,6 +44,9 @@ const Layout = props => (
                 key="og:description"
             />
             <meta property="og:site_name" content="CoWorking Night" key="og:site_name" />
+
+            <title>CoWorking Night Flyer</title>
+            <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
         </Head>
         <header>
             <Jumbotron />
