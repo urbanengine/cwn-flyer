@@ -23,7 +23,7 @@ class Workshops extends Component {
                     return (
                         <div>
                             <Head>
-                                <link rel="stylesheet" href="/static/workshops.css" key="workshops:css" />
+                                <link rel="stylesheet" href="/static/css/workshops.css" key="workshops:css" />
                             </Head>
                             <div className="card-deck">
                                 { workshopList }

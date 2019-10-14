@@ -56,7 +56,7 @@ class Schedule extends Component {
                         return (
                             <div>
                                 <Head>
-                                    <link rel="stylesheet" href="/static/workshopCard.css" key="workshopCard:css" />
+                                    <link rel="stylesheet" href="/static/css/schedule.css" key="workshopCard:css" />
                                 </Head>
                                 <div className="container my-2 cwn-schedule">
                                     { timeSlotList }

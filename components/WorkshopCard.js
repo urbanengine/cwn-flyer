@@ -14,7 +14,7 @@ class WorkshopCard extends Component {
             <div>
                 { /*console.log( JSON.stringify( workshop ) ) */}
                 <Head>
-                    <link rel="stylesheet" href="/static/workshopCard.css" key="workshopCard:css" />
+                    <link rel="stylesheet" href="/static/css/workshopCard.css" key="workshopCard:css" />
                 </Head>
                 <div className="card workshop">
                     <div className="progress">

@@ -26,7 +26,7 @@ class Jumbotron extends Component {
                         key="fontawesome"
                     />
 
-                    <link rel="stylesheet" href="/static/jumbotron.css" key="jumbotron:css" />
+                    <link rel="stylesheet" href="/static/css/jumbotron.css" key="jumbotron:css" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
                 <div className="jumbotron">
