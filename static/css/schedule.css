@@ -1,0 +1,11 @@
+@media (max-width:543px) {
+    .cwn-schedule {
+            padding-left: 0;
+            padding-right: 0;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .cwn-schedule {
+        width: 100%;
+    }
+}

@@ -6,7 +6,6 @@
 trigger:
 #- master
 - switch-to-nextjs
-- greenkeeper/*
 
 pr:
 - master
