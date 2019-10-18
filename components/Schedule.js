@@ -19,9 +19,8 @@ class Schedule extends Component {
         return (
             <FlyerContext.Consumer>
                 {(context) => {
-                    const cwn = context.state.cwn;
-                
-                    const showErrorMessage = isEmpty( cwn ) || ( isEmpty( cwn ) && ( isEmpty( cwn.workshops ) || isEmpty( cwn.workshops.length ) ) ) ? true: false;
+                    const cwn = context.state.cwn;                
+                    const showErrorMessage = isEmpty( cwn ) || ( isEmpty( cwn ) === false && isEmpty( cwn.workshops ) );
 
                     // This should only be shown if showErrorMessage above returns true
                     if ( showErrorMessage ) {
@@ -56,7 +55,7 @@ class Schedule extends Component {
                         return (
                             <div>
                                 <Head>
-                                    <link rel="stylesheet" href="/static/css/schedule.css" key="workshopCard:css" />
+                                    <link rel="stylesheet" href="/static/css/schedule.css" key="schedule:css" />
                                 </Head>
                                 <div className="container my-2 cwn-schedule">
                                     { timeSlotList }

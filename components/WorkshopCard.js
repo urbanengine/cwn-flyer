@@ -1,43 +1,115 @@
 import React, { Component } from 'react';
 import Head from "next/head";
-import FlyerContext from './FlyerContext';
 import Moment from "react-moment";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class WorkshopCard extends Component {
+    constructor( props ) {
+        super( props );
+
+        library.add( fab, fas );
+
+        // start time for time slot
+        const startTime = this.props.workshop.start_time; 
+        const endTime = this.props.workshop.end_time;
+        const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
+        const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
+        const progress = Math.min( 1, Math.max( 0, 1 - ( millisecondsToEventEnd / totalMillisecondsInEvent ) ) );
+
+        this.state = {
+            ended: false,
+            progress: progress
+        };
+    }
+
+    componentWillUnmount() {
+        clearInterval( this.interval );
+    }
+    
+    componentDidMount() {
+        const workshop = this.props.workshop;
+
+        // Update progress bar every 60 seconds
+        this.interval = setInterval( this.tick.bind( this ), 60000 );
+
+        // Update when the event ends
+        var millisecondsToEventEnd = new Date( workshop.end_time ).getTime() - new Date().getTime();
+        if ( millisecondsToEventEnd > 0 ) {
+            setTimeout( function() {
+            this.setState( {
+                ended: true
+            } );
+            }.bind( this ), millisecondsToEventEnd );
+        }
+        else {
+            this.setState( {
+                ended: true
+            } );
+        }
+    }
+
+    tick() {
+        const startTime = this.props.workshop.start_time; 
+        const endTime = this.props.workshop.end_time;
+        const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
+        const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
+        const progress = Math.min( 1, Math.max( 0, 1 - ( millisecondsToEventEnd / totalMillisecondsInEvent ) ) );
+        this.setState( {
+            progress: progress
+        } );
+    }
 
     render() {
-        // start time for time slot
         const workshop = this.props.workshop;
-        const iconClass = "fas fa-" + workshop.icon + " fa-4x";
-        
+
+        var cardWorkshopCss = 'card workshop';
+        if ( this.state.ended ) {
+            cardWorkshopCss += ' workshop-ended';
+        }
+
+        if ( workshop.isCancelled ) {
+            cardWorkshopCss += ' workshop-canceled';
+        }
+
+        var progressBarStyle = {
+            width: `${Math.ceil( this.state.progress * 100 )}%`
+        };
+
         return (
-            <div>
-                { /*console.log( JSON.stringify( workshop ) ) */}
+            <div className={cardWorkshopCss}>
                 <Head>
                     <link rel="stylesheet" href="/static/css/workshopCard.css" key="workshopCard:css" />
                 </Head>
-                <div className="card workshop">
-                    <div className="progress">
-                        <div className="progress-bar" role="progress" aria-valuemin="0" area-valuemax="100"></div>
+                <div className="progress">
+                    <div className="progress-bar" role="progress" style={progressBarStyle} aria-valuemin="0" area-valuemax="100"></div>
+                </div>
+                <div className="card-block">
+                    <div className="workshop-icon">
+                        <FontAwesomeIcon icon={workshop.icon} size="4x" />
                     </div>
-                    <div className="card-block">
-                        <div className="workshop-icon">
-                            <i className={iconClass}></i>
-                        </div>
-                        <h3 className="card-title workshop-title">{workshop.title}</h3>
-                        <span className="group-title">
-                            <a href="#">{workshop.group}</a>
-                        </span>
-                        <span className="workshop-category">{workshop.category}</span>
-                        <br />
-                        <span className="workshop-time">
-                            {/* Add Moment js code here */}
-                        </span>
-                        <span className="workshop-location">{workshop.room}</span>
-                        <p className="card-text workshop-description">
-                            {workshop.description}
-                        </p>
-                    </div>
+                    <h3 className="card-title workshop-title">{workshop.title}</h3>
+                    <span className="group-title">
+                        <a href="#">{workshop.group}</a>
+                    </span>
+                    <span className="workshop-category">{workshop.category}</span>
+                    <br />
+                    <span className="workshop-time">
+                    <Moment format="h:mm" tz="America/Chicago">
+                        { workshop.start_time }
+                    </Moment>
+                    -
+                    <Moment format="h:mm" tz="America/Chicago">
+                        { workshop.end_time }
+                    </Moment>
+                    </span>
+                    <span className="workshop-location">{workshop.room}</span>
+                    <p className="card-text workshop-description">
+                        {workshop.description}
+                    </p>
                 </div>
             </div>
         )

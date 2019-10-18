@@ -36,7 +36,6 @@ class Index extends Component {
         return (
             <FlyerContext.Provider value={ { state: this.state } }>
                 <Layout>
-                    <title>CoWorking Night Flyer</title>
                     <Schedule />
                 </Layout>
             </FlyerContext.Provider>

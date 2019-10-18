@@ -1,0 +1,25 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background: #ebe6db;
+}
+
+@font-face {
+    font-family: 'norwesterregular';
+    src: url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff2') format('woff2'), url('https://static1.squarespace.com/static/57dab55ad2b85760483591ab/t/587c41221b631b453a472ceb/1484538146934/norwester-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Raleway"), local("Raleway-Regular"), url(https://fonts.gstatic.com/s/raleway/v11/bIcY3_3JNqUVRAQQRNVteQ.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Raleway Bold"), local("Raleway-Bold"), url(https://fonts.gstatic.com/s/raleway/v11/JbtMzqLaYbbbCL9X6EvaIy3USBnSvpkopQaUR-2r7iU.ttf) format("truetype")
+}

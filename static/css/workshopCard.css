@@ -1,6 +1,6 @@
 .card {
     overflow: hidden;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .card-block {
@@ -133,4 +133,53 @@
         display:inline-block;
         margin-bottom:0;
     }
+}
+
+.workshop-updated .workshop-title:before {
+    content:"Updated:";
+    text-decoration: none;
+    display:inline-block;
+    margin-right:4px;
+    vertical-align:text-top;
+    color:#fff;
+    background-color: #f96156;
+    padding:5px;
+    font-size:1rem;
+    line-height:1rem;
+}
+
+.workshop-ended {
+    background:#c5c5c5;
+}
+.workshop-ended p, .workshop-ended span, .workshop-ended .progress {
+  opacity:0.6;
+}
+
+.workshop-ended .workshop-description {
+  display: none;
+}
+
+.workshop-canceled {
+    background:#c5c5c5;
+}
+
+.workshop-canceled p, .workshop-canceled span {
+  opacity:0.5;
+} 
+
+.workshop-canceled .workshop-title {
+    text-decoration:line-through;
+}
+
+.workshop-canceled .workshop-title:before {
+    content:"Canceled:";
+    text-decoration: none;
+    display:inline-block;
+    margin-right:5px;
+    vertical-align:text-top;
+    color:#fff;
+    background-color: #f96156;
+    padding:5px;
+    font-size:1rem;
+    line-height:1rem;
 }
