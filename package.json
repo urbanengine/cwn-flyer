@@ -27,7 +27,7 @@
     "next": "8.0.3",
     "preact": "^8.4.2",
     "prop-types": "^15.6.0",
-    "react": "^16.8.5",
+    "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-moment": "^0.8.4"
   },
