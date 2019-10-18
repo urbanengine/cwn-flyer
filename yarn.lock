@@ -3804,10 +3804,10 @@ react-is@^16.3.2, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-moment@^0.8.4:
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.8.4.tgz#18eb59e1541c8b216353e23c21e9db50e42e2edb"
-  integrity sha512-QhI19OcfhiAn60/O6bMR0w8ApXrPFCjv6+eV0I/P9/AswzjgEAx4L7VxMBCpS/jrythLa12Q9v88req+ys4YpA==
+react-moment@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.6.tgz#6b359a48205a52196408303e30bc982cd46d0bee"
+  integrity sha512-GAnd5NRIpGjDqLoGahJCkiCEQS1d8+dIZbIfPuy/eQ0O5Rio43fEkj5G+qrKbZCQY55fiNafpHpuirVIHqPoSg==
 
 react@^16.10.2:
   version "16.10.2"
