@@ -8,6 +8,12 @@ class City extends Component {
 
     constructor( props ) {
         super( props );
+
+        this.state = {
+            message: props.message,
+            cwn: props.cwn,
+            city: props.city
+        };
     }
 
     state = {
@@ -28,13 +34,7 @@ class City extends Component {
         };
     }
 
-    componentWillMount() {
-        this.setState( { 
-            message: this.props.message,
-            cwn: this.props.cwn,
-            city: this.props.city
-        } );
-    }
+    
 
     render() {
         return (
