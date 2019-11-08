@@ -4,7 +4,7 @@
     "env": {
       "HOSTNAME": "https://openhuntsville-development.herokuapp.com",
       "APIKEY": {
-        "required": true
+        "required": false
       },
       "NODE_ENV": "production"
     },
