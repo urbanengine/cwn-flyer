@@ -28,7 +28,7 @@
     "preact": "^10.0.5",
     "prop-types": "^15.6.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.13.0",
     "react-moment": "^0.9.6"
   },
   "scripts": {
