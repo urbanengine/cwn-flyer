@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.19.1",
