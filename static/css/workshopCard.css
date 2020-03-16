@@ -183,3 +183,12 @@
     font-size:1rem;
     line-height:1rem;
 }
+
+.workshop-url {
+    display: flex;
+}
+.workshop-url img{
+    margin-right: 4px;
+    height: 24px;
+    width: 24px; 
+}
