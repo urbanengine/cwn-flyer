@@ -112,8 +112,8 @@ class WorkshopCard extends Component {
                     </p>
                     {workshop.virtual_meetup_url && 
                     <a href={workshop.virtual_meetup_url} target="_blank">
-                        <div className='workshop-url'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Google_Hangouts_Meet_icon.png" />
+                        <div className={workshop.virtual_meetup_url.includes('zoom') ? 'workshop-url zoom' : 'workshop-url meet'}>
+                            {workshop.virtual_meetup_url.includes('zoom') ? <img src="/static/images/zoom.png" /> : <img src="/static/images/meet.png" />}
                             <div>Click to join the Meeting</div>
                         </div>
                     </a>
