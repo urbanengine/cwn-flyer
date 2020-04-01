@@ -189,6 +189,14 @@
 }
 .workshop-url img{
     margin-right: 4px;
+}
+
+.meet {
     height: 24px;
     width: 24px; 
+}
+
+.zoom {
+    height: 24px;
+    width: 24px
 }
