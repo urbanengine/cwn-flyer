@@ -14,7 +14,7 @@ class WorkshopCard extends Component {
         library.add( fab, fas );
 
         // start time for time slot
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -29,7 +29,7 @@ class WorkshopCard extends Component {
     componentWillUnmount() {
         clearInterval( this.interval );
     }
-    
+
     componentDidMount() {
         const workshop = this.props.workshop;
 
@@ -53,7 +53,7 @@ class WorkshopCard extends Component {
     }
 
     tick() {
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -88,9 +88,6 @@ class WorkshopCard extends Component {
                     <div className="progress-bar" role="progress" style={progressBarStyle} aria-valuemin="0" area-valuemax="100"></div>
                 </div>
                 <div className="card-block">
-                    <div className="workshop-icon">
-                        <FontAwesomeIcon icon={workshop.icon} size="4x" />
-                    </div>
                     <h3 className="card-title workshop-title">{workshop.title}</h3>
                     <span className="group-title">
                         <a href="#">{workshop.group}</a>
@@ -110,7 +107,7 @@ class WorkshopCard extends Component {
                     <p className="card-text workshop-description">
                         {workshop.description}
                     </p>
-                    {workshop.virtual_meetup_url && 
+                    {workshop.virtual_meetup_url &&
                     <a href={workshop.virtual_meetup_url} target="_blank">
                         <div className={workshop.virtual_meetup_url.includes('zoom') ? 'workshop-url zoom' : 'workshop-url meet'}>
                             {workshop.virtual_meetup_url.includes('zoom') ? <img src="/static/images/zoom.png" /> : <img src="/static/images/meet.png" />}
