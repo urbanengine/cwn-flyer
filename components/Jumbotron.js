@@ -45,7 +45,10 @@ class Jumbotron extends Component {
                             Anyone of any age or background is welcome to attend. No
                             RSVP is required; just show up!
                             <br />
-                            If you would like to schedule a workshop with us and we'll market it to our community. For inquires about scheduling a workshop, please contact Matt Brooks <a href="mailto:matt@urbanengine.org">matt@urbanengine.org</a>
+                            <br />
+                            If you would like to schedule a workshop with us, we'll market it to our community. 
+                            <br />
+                            For inquires about scheduling a workshop, please contact Matt Brooks @ <a href="mailto:matt@urbanengine.org">matt@urbanengine.org</a>
                         </p>
                         <FlyerContext.Consumer>
                             {(context) => {
