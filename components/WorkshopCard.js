@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Head from "next/head";
-import Moment from "react-moment";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import Head from 'next/head';
+import Moment from 'react-moment';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -63,6 +63,18 @@ class WorkshopCard extends Component {
         } );
     }
 
+    renderVirtualMeetupSection = (meetupUrl) => {
+        let meetupType = meetupUrl.includes('zoom') ? 'zoom' : meetupUrl.includes('teams') ? 'teams' : 'meet';
+
+        return (
+        <a href={meetupUrl} target='_blank'>
+            <div className={`workshop-url ${meetupType}`}>
+                <img src={`/static/images/${meetupType}.png`} />
+                <div>Click to join the Meeting</div>
+            </div>
+        </a>);
+    }
+
     render() {
         const workshop = this.props.workshop;
 
@@ -82,42 +94,36 @@ class WorkshopCard extends Component {
         return (
             <div className={cardWorkshopCss}>
                 <Head>
-                    <link rel="stylesheet" href="/static/css/workshopCard.css" key="workshopCard:css" />
+                    <link rel='stylesheet' href='/static/css/workshopCard.css' key='workshopCard:css' />
                 </Head>
-                <div className="progress">
-                    <div className="progress-bar" role="progress" style={progressBarStyle} aria-valuemin="0" area-valuemax="100"></div>
+                <div className='progress'>
+                    <div className='progress-bar' role='progress' style={progressBarStyle} aria-valuemin='0' area-valuemax='100'></div>
                 </div>
-                <div className="card-block">
-                    <div className="workshop-icon">
-                        <FontAwesomeIcon icon={workshop.icon} size="4x" />
+                <div className='card-block'>
+                    <div className='workshop-icon'>
+                        <FontAwesomeIcon icon={workshop.icon} size='4x' />
                     </div>
-                    <h3 className="card-title workshop-title">{workshop.title}</h3>
-                    <span className="group-title">
-                        <a href="#">{workshop.group}</a>
+                    <h3 className='card-title workshop-title'>{workshop.title}</h3>
+                    <span className='group-title'>
+                        <a href='#'>{workshop.group}</a>
                     </span>
-                    <span className="workshop-category">{workshop.category}</span>
+                    <span className='workshop-category'>{workshop.category}</span>
                     <br />
-                    <span className="workshop-time">
-                    <Moment format="h:mm" tz="America/Chicago">
+                    <span className='workshop-time'>
+                    <Moment format='h:mm' tz='America/Chicago'>
                         { workshop.start_time }
                     </Moment>
                     -
-                    <Moment format="h:mm" tz="America/Chicago">
+                    <Moment format='h:mm' tz='America/Chicago'>
                         { workshop.end_time }
                     </Moment>
                     </span>
-                    <span className="workshop-location">{workshop.room}</span>
-                    <p className="card-text workshop-description">
+                    <span className='workshop-location'>{workshop.room}</span>
+                    <p className='card-text workshop-description'>
                         {workshop.description}
                     </p>
                     {workshop.virtual_meetup_url && 
-                    <a href={workshop.virtual_meetup_url} target="_blank">
-                        <div className={workshop.virtual_meetup_url.includes('zoom') ? 'workshop-url zoom' : 'workshop-url meet'}>
-                            {workshop.virtual_meetup_url.includes('zoom') ? <img src="/static/images/zoom.png" /> : <img src="/static/images/meet.png" />}
-                            <div>Click to join the Meeting</div>
-                        </div>
-                    </a>
-    }
+                        this.renderVirtualMeetupSection(workshop.virtual_meetup_url) }
                 </div>
             </div>
         )
