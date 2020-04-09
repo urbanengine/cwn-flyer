@@ -18,7 +18,7 @@ const Layout = props => (
             />
             <meta
                 property="og:description"
-                content="CoWorking Night is a free weekly conference where professionals come to learn, connect, and collaborate.  Each week features a new lineup of workshops. See what's happening this week!"
+                content="CoWorking Night is a free weekly conference where professionals come to learn, connect, and collaborate. Anyone of any age or background is welcome to attend. No RSVP is required; just show up! Our workshops are led by people like you. If you would like to schedule a workshop with us, we'll market it to our community. For inquires about scheduling a workshop, please contact Matt Brooks @ matt@urbanengine.org"
                 key="og:description"
             />
             <meta property="og:site_name" content="CoWorking Night" key="og:site_name" />
