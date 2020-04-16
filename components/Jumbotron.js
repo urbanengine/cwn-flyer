@@ -13,7 +13,7 @@ class Jumbotron extends Component {
             <div>
                 <Head>
                     <link
-                        rel="preload"
+                        rel="prefetch"
                         as="style"
                         href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
                         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -22,7 +22,7 @@ class Jumbotron extends Component {
                     />
 
                     <link
-                        rel="preload"
+                        rel="prefetch"
                         as="style"
                         href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.css"
                         key="fontawesome"
