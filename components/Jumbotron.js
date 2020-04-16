@@ -14,6 +14,7 @@ class Jumbotron extends Component {
                 <Head>
                     <link
                         rel="preload"
+                        as="style"
                         href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
                         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
                         crossOrigin="anonymous"
@@ -22,12 +23,13 @@ class Jumbotron extends Component {
 
                     <link
                         rel="preload"
+                        as="style"
                         href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.css"
                         key="fontawesome"
                     />
 
-                    <link rel="preload" href="/static/css/jumbotron.css" key="jumbotron:css" />
-                    <link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
+                    <link rel="preload" as="style" href="/static/css/jumbotron.css" key="jumbotron:css" />
+                    <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
                 <div className="jumbotron">
                     <div>

@@ -25,7 +25,7 @@ const Layout = props => (
 
             <title>CoWorking Night Flyer</title>
             <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
-            <link rel="preload" href="/static/css/layout.css" key="layout:css" />
+            <link rel="preload" as="style" href="/static/css/layout.css" key="layout:css" />
         </Head>
         <header>
             <Jumbotron />

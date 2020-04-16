@@ -55,7 +55,7 @@ class Schedule extends Component {
                         return (
                             <div>
                                 <Head>
-                                    <link rel="preload" href="/static/css/schedule.css" key="schedule:css" />
+                                    <link rel="preload" as="style" href="/static/css/schedule.css" key="schedule:css" />
                                 </Head>
                                 <div className="container my-2 cwn-schedule">
                                     { timeSlotList }
