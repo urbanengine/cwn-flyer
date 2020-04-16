@@ -94,7 +94,7 @@ class WorkshopCard extends Component {
         return (
             <div className={cardWorkshopCss}>
                 <Head>
-                    <link rel='preload' as="style" href='/static/css/workshopCard.css' key='workshopCard:css' />
+                    <link rel='stylesheet' href='/static/css/workshopCard.css' key='workshopCard:css' />
                 </Head>
                 <div className='progress'>
                     <div className='progress-bar' role='progress' style={progressBarStyle} aria-valuemin='0' area-valuemax='100'></div>

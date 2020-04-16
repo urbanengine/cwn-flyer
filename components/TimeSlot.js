@@ -16,7 +16,7 @@ class TimeSlot extends Component {
         return (
             <div>
                 <Head>
-                    <link rel="preload" as="style" href="/static/css/timeslot.css" key="timeslot:css" />
+                    <link rel="stylesheet" href="/static/css/timeslot.css" key="timeslot:css" />
                 </Head>
                 <div className="time-slot">
                     <div className="time-slot-bracket">

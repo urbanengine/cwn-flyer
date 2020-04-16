@@ -21,13 +21,13 @@ class Jumbotron extends Component {
                     />
 
                     <link
-                        rel="styleshet"
+                        rel="stylesheet"
                         href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.css"
                         key="fontawesome"
                     />
 
-                    <link rel="preload" as="style" href="/static/css/jumbotron.css" key="jumbotron:css" />
-                    <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
+                    <link rel="stylesheet" href="/static/css/jumbotron.css" key="jumbotron:css" />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
                 <div className="jumbotron">
                     <div>
