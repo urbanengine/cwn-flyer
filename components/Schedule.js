@@ -19,7 +19,7 @@ class Schedule extends Component {
         return (
             <FlyerContext.Consumer>
                 {(context) => {
-                    const cwn = context.state.cwn;                
+                    const cwn = context.state.cwn;
                     const showErrorMessage = isEmpty( cwn ) || ( isEmpty( cwn ) === false && isEmpty( cwn.workshops ) );
 
                     // This should only be shown if showErrorMessage above returns true
@@ -28,12 +28,12 @@ class Schedule extends Component {
                     }
                     else {
                         var timeSlots = {};
-                        
+
                         // Create an object where each property is an array of events based on the start_time
                         // The properties key will match the start time of the events within the array
                         cwn.workshops.forEach(function( workshop ) {
                             var startTime = workshop.start_time;
-                            
+
                             if ( timeSlots[ startTime ] == undefined ) {
                                 timeSlots[ startTime ] = [];
                             }

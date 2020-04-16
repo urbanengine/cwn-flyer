@@ -8,7 +8,7 @@ class Workshops extends Component {
 
     render() {
         const startTime = this.props.startTime;
-        
+
         return (
             <FlyerContext.Consumer>
                 {(context) => {

@@ -14,7 +14,7 @@ class WorkshopCard extends Component {
         library.add( fab, fas );
 
         // start time for time slot
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -29,7 +29,7 @@ class WorkshopCard extends Component {
     componentWillUnmount() {
         clearInterval( this.interval );
     }
-    
+
     componentDidMount() {
         const workshop = this.props.workshop;
 
@@ -53,7 +53,7 @@ class WorkshopCard extends Component {
     }
 
     tick() {
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -122,7 +122,7 @@ class WorkshopCard extends Component {
                     <p className='card-text workshop-description'>
                         {workshop.description}
                     </p>
-                    {workshop.virtual_meetup_url && 
+                    {workshop.virtual_meetup_url &&
                         this.renderVirtualMeetupSection(workshop.virtual_meetup_url) }
                 </div>
             </div>
