@@ -5,6 +5,6 @@ module.exports = withCSS( {
     /* config options go below */
 
     optimization: {
-        minimize: false //Update this to true or false
+        minimize: true //Update this to true or false
     }
 } );
