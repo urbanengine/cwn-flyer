@@ -6,7 +6,7 @@ const app = next( { dev } );
 const handler = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
-app.use( compression() );
+express.use( compression() );
 
 app.prepare()
     .then(() => {
