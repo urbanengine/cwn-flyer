@@ -2,7 +2,7 @@ body {
     font-family: 'Raleway', sans-serif;
     background: #EBE6DB;
 }
-  
+
 a {
     color:#F96156;
     font-weight:bold;
@@ -29,7 +29,7 @@ h1, h2, h3, h4 {
 
 .jumbotron {
     padding: 2rem 4%;
-    background: url(https://s3.us-east-2.amazonaws.com/cwn-images/cwn-flyer-bg-hw.jpg) 50% 50% transparent;
+    background: url(/static/images/cwn-flyer-bg-hw.jpg) 50% 50% transparent;
     background-size: cover;
     color: #e8e2d0;
     text-align: center;
@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
 
 .cwn-info {
     font-size: 1.75rem;
-}  
+}
 
 .cwn-time:before {
     content: " - ";

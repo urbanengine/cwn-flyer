@@ -30,7 +30,7 @@ class Jumbotron extends Component {
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
                 <div className="jumbotron">
-                    <div className="">
+                    <div>
                         <h1 className="cwn-logo">
                             <a href="https://coworkingnight.org">
                                 <img
