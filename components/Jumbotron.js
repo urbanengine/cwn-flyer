@@ -12,20 +12,8 @@ class Jumbotron extends Component {
         return (
             <div>
                 <Head>
-                    <link
-                        rel="stylesheet"
-                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-                        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-                        crossOrigin="anonymous"
-                        key="bootstrap"
-                    />
-
-                    <link
-                        rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.css"
-                        key="fontawesome"
-                    />
-
+                    <link rel="stylesheet" href="/static/css/vendor/bootstrap.min.css" key="bootstrap" />
+                    <link rel="stylesheet" href="/static/css/vendor/fontawesome.min.css" key="fontawesome" />
                     <link rel="stylesheet" href="/static/css/jumbotron.css" key="jumbotron:css" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
