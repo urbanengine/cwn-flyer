@@ -12,8 +12,8 @@ class Sponsors extends Component {
         return (
             <div>
                 <Head>
-                    <link rel="stylesheet" href="/static/css/sponsors.css" key="sponsors:css" />
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
+                    <link rel="preload" href="/static/css/sponsors.css" key="sponsors:css" />
+                    <link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway" key="raleway:font" />
                 </Head>
                 <div className="footer-spacer" />
                 <footer className="footer fixed-bottom text-center">
