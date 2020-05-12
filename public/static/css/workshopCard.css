@@ -136,7 +136,7 @@
 }
 
 .workshop-updated .workshop-title:before {
-    content:"Updated:";
+    content: "Updated";
     text-decoration: none;
     display:inline-block;
     margin-right:4px;
@@ -172,7 +172,7 @@
 }
 
 .workshop-canceled .workshop-title:before {
-    content:"Canceled:";
+    content: "Canceled";
     text-decoration: none;
     display:inline-block;
     margin-right:5px;
