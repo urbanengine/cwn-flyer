@@ -25,6 +25,7 @@ class City extends Component {
     static async getInitialProps ( context ) {
         // construct the url for the endpoint that will give us the schedule
         const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDARGROUP}/events?key=${process.env.APIKEY}`;
+        console.log( { calendarUrl } );
         const response = await fetch(calendarUrl);
         const calendarEvents = await response.json();
 
