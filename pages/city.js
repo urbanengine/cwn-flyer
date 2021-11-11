@@ -25,7 +25,6 @@ class City extends Component {
     static async getInitialProps ( context ) {
         // construct the url for the endpoint that will give us the schedule
         const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDARGROUP}/events?key=${process.env.APIKEY}`;
-        console.log( { calendarUrl } );
         const response = await fetch(calendarUrl);
         const calendarEvents = await response.json();
 
@@ -35,8 +34,8 @@ class City extends Component {
         // Get the next date of coworking night. Could be today :)
         const nextEventDate = new Date();
         nextEventDate.setDate(nextEventDate.getDate() + (((3 + 7 - nextEventDate.getDay()) % 7)));
-        const startDateOfCwn = moment(nextEventDate).startOf('day');
-        const endDateOfCwn = moment(nextEventDate).endOf('day');
+        const startDateOfCwn = moment(nextEventDate).tz('America/Chicago').startOf('day');
+        const endDateOfCwn = moment(nextEventDate).tz('America/Chicago').endOf('day');
 
         // Convert Google Calendar events to the workshop format
         const workshops = [];

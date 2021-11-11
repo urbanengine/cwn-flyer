@@ -27,8 +27,8 @@ class Index extends Component {
         // Get the next date of coworking night. Could be today :)
         const nextEventDate = new Date();
         nextEventDate.setDate(nextEventDate.getDate() + (((3 + 7 - nextEventDate.getDay()) % 7)));
-        const startDateOfCwn = moment(nextEventDate).startOf('day');
-        const endDateOfCwn = moment(nextEventDate).endOf('day');
+        const startDateOfCwn = moment(nextEventDate).tz('America/Chicago').startOf('day');
+        const endDateOfCwn = moment(nextEventDate).tz('America/Chicago').endOf('day');
 
         // Convert Google Calendar events to the workshop format
         const workshops = [];
