@@ -2,9 +2,11 @@
     "name": "cwn-flyer",
     "scripts": {},
     "env": {
-      "HOSTNAME": "https://openhuntsville-development.herokuapp.com",
+      "CALENDARGROUP": {
+        "required": true
+      },
       "APIKEY": {
-        "required": false
+        "required": true
       },
       "NODE_ENV": "production"
     },
