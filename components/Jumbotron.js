@@ -47,7 +47,7 @@ class Jumbotron extends Component {
                             <br />
                             Our workshops are led by people like you. If you would like to schedule a workshop with us, we'll market it to our community. 
                             <br />
-                            For inquires about scheduling a workshop, please contact Matt Brooks @ <a href="mailto:matt@urbanengine.org">matt@urbanengine.org</a>
+                            For inquires about scheduling a workshop, please contact Clark Dunn @ <a href="mailto:clark@beyondrockets.com">clark@beyondrockets.com</a>
                         </p>
                         <FlyerContext.Consumer>
                             {(context) => {
