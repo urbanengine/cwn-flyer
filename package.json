@@ -39,8 +39,6 @@
     "start": "node server.js -p $PORT"
   },
   "engines": {
-    "node": ">=16.13.0",
-    "npm": ">=6.4.1",
-    "yarn": ">=1.15.2"
+    "node": "14.x",
   }
 }
