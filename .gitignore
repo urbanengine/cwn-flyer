@@ -4,6 +4,7 @@ logs
 
 # Configuration
 .env
+.env.local
 
 # Runtime data
 pids

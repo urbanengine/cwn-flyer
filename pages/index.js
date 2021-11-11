@@ -53,21 +53,9 @@ class Index extends Component {
             workshops
         };
 
-        const city = {
-            airportCode: "hsv",
-            city: "Huntsville",
-            id: 2,
-            sponsor: {
-                name: "CommentSold",
-                url: "https://commentsold.com"
-            },
-            venue: "Huntsville West"
-        };
-        
         return {
             message,
             cwn,
-            city,
         };
     }
 
