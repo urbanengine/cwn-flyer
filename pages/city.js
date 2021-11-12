@@ -26,7 +26,7 @@ class City extends Component {
         const message = "Nothing scheduled yet, check back soon!";
 
         // Get the next date of coworking night. Could be today :)
-        let nextEventDate = TimeLib.getNextEventDate();
+        const nextEventDate = TimeLib.getNextEventDate();
 
         // Get Workshops from Google Calendar
         const cwn = await GoogleCalendarService.getCwnWorkshops( nextEventDate );
