@@ -104,11 +104,6 @@ class WorkshopCard extends Component {
                         <FontAwesomeIcon icon={workshop.icon} size='4x' />
                     </div>
                     <h3 className='card-title workshop-title'>{workshop.title}</h3>
-                    <span className='group-title'>
-                        <a href='#'>{workshop.group}</a>
-                    </span>
-                    <span className='workshop-category'>{workshop.category}</span>
-                    <br />
                     <span className='workshop-time'>
                     <Moment format='h:mm' tz='America/Chicago'>
                         { workshop.start_time }
