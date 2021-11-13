@@ -4,8 +4,8 @@ import FlyerContext from './FlyerContext';
 import TimeSlot from './TimeSlot';
 
 const isEmpty = ( value ) => {
-    return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 ) || ( JSON.stringify( value ) === '{}');
-}
+    return ( value === null ) || ( value === undefined ) || ( Array.isArray( value ) && value.length === 0 ) || ( JSON.stringify( value ) === '{}' );
+};
 
 class Schedule extends Component {
 
@@ -18,28 +18,28 @@ class Schedule extends Component {
 
         return (
             <FlyerContext.Consumer>
-                {(context) => {
-                    const cwn = context.state.cwn;                
+                {( context ) => {
+                    const cwn = context.state.cwn;
                     const showErrorMessage = isEmpty( cwn ) || ( isEmpty( cwn ) === false && isEmpty( cwn.workshops ) );
 
                     // This should only be shown if showErrorMessage above returns true
                     if ( showErrorMessage ) {
-                        return <h3 style={errorMessageStyle} className="error-message">{context.state.message}</h3>
+                        return <h3 style={errorMessageStyle} className="error-message">{context.state.message}</h3>;
                     }
                     else {
                         var timeSlots = {};
-                        
+
                         // Create an object where each property is an array of events based on the start_time
                         // The properties key will match the start time of the events within the array
-                        cwn.workshops.forEach(function( workshop ) {
+                        cwn.workshops.forEach( function ( workshop ) {
                             var startTime = workshop.start_time;
-                            
-                            if ( timeSlots[ startTime ] == undefined ) {
-                                timeSlots[ startTime ] = [];
+
+                            if ( timeSlots[startTime] == undefined ) {
+                                timeSlots[startTime] = [];
                             }
 
-                            timeSlots[ startTime ].push( workshop );
-                        });
+                            timeSlots[startTime].push( workshop );
+                        } );
 
                         // Grab the start times for each time slot so we can associate the time to the timeslot
                         const startTimes = Object.keys( timeSlots );
@@ -58,12 +58,12 @@ class Schedule extends Component {
                                     <link rel="stylesheet" href="/static/css/schedule.css" key="schedule:css" />
                                 </Head>
                                 <div className="container my-2 cwn-schedule">
-                                    { timeSlotList }
+                                    {timeSlotList}
                                 </div>
                             </div>
-                        )
+                        );
                     }
-                } }
+                }}
             </FlyerContext.Consumer>
         );
     }

@@ -7,7 +7,7 @@ class Jumbotron extends Component {
     constructor( props ) {
         super( props );
     }
-    
+
     render() {
         return (
             <div>
@@ -45,12 +45,12 @@ class Jumbotron extends Component {
                             Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
                             <br />
                             <br />
-                            Our workshops are led by people like you. If you would like to schedule a workshop with us, we'll market it to our community. 
+                            Our workshops are led by people like you. If you would like to schedule a workshop with us, we'll market it to our community.
                             <br />
                             For inquires about scheduling a workshop, please contact Clark Dunn @ <a href="mailto:clark@beyondrockets.com">clark@beyondrockets.com</a>
                         </p>
                         <FlyerContext.Consumer>
-                            {(context) => {
+                            {( context ) => {
                                 const cwn = context.state.cwn;
 
                                 return (
@@ -59,20 +59,20 @@ class Jumbotron extends Component {
                                             <span className="cwn-date-time">
                                                 <span className="cwn-date">
                                                     <Moment format="LL" tz="America/Chicago">
-                                                        { cwn.start_time }
+                                                        {cwn.start_time}
                                                     </Moment>
                                                 </span>
                                             </span>
-                                            <span className="cwn-location">{ cwn.location ? cwn.location : "Not Available" }</span>
+                                            <span className="cwn-location">{cwn.location ? cwn.location : "Not Available"}</span>
                                         </h2>
                                     </div>
-                                )
-                            } }
+                                );
+                            }}
                         </FlyerContext.Consumer>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 

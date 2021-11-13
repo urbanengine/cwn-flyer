@@ -18,8 +18,8 @@ class Sponsors extends Component {
                 <div className="footer-spacer" />
                 <footer className="footer fixed-bottom text-center">
                     <div className="container">
-                    <FlyerContext.Consumer>
-                            {(context) => {
+                        <FlyerContext.Consumer>
+                            {( context ) => {
                                 const city = context.state.city;
 
                                 return (
@@ -34,13 +34,13 @@ class Sponsors extends Component {
                                         </a>
                                         .
                                     </p>
-                                )
-                        } }
-                    </FlyerContext.Consumer>
+                                );
+                            }}
+                        </FlyerContext.Consumer>
                     </div>
                 </footer>
             </div>
-        )
+        );
     }
 }
 

@@ -14,7 +14,7 @@ class WorkshopCard extends Component {
         library.add( fab, fas );
 
         // start time for time slot
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -29,7 +29,7 @@ class WorkshopCard extends Component {
     componentWillUnmount() {
         clearInterval( this.interval );
     }
-    
+
     componentDidMount() {
         const workshop = this.props.workshop;
 
@@ -39,10 +39,10 @@ class WorkshopCard extends Component {
         // Update when the event ends
         var millisecondsToEventEnd = new Date( workshop.end_time ).getTime() - new Date().getTime();
         if ( millisecondsToEventEnd > 0 ) {
-            setTimeout( function() {
-            this.setState( {
-                ended: true
-            } );
+            setTimeout( function () {
+                this.setState( {
+                    ended: true
+                } );
             }.bind( this ), millisecondsToEventEnd );
         }
         else {
@@ -53,7 +53,7 @@ class WorkshopCard extends Component {
     }
 
     tick() {
-        const startTime = this.props.workshop.start_time; 
+        const startTime = this.props.workshop.start_time;
         const endTime = this.props.workshop.end_time;
         const millisecondsToEventEnd = new Date( endTime ).getTime() - new Date().getTime();
         const totalMillisecondsInEvent = new Date( endTime ).getTime() - new Date( startTime ).getTime();
@@ -63,17 +63,17 @@ class WorkshopCard extends Component {
         } );
     }
 
-    renderVirtualMeetupSection = (meetupUrl) => {
-        let meetupType = meetupUrl.includes('zoom') ? 'zoom' : meetupUrl.includes('teams') ? 'teams' : 'meet';
+    renderVirtualMeetupSection = ( meetupUrl ) => {
+        let meetupType = meetupUrl.includes( 'zoom' ) ? 'zoom' : meetupUrl.includes( 'teams' ) ? 'teams' : 'meet';
 
         return (
-        <a href={meetupUrl} target='_blank'>
-            <div className={`workshop-url ${meetupType}`}>
-                <img src={`/static/images/${meetupType}.png`} />
-                <div>Click to join the Meeting</div>
-            </div>
-        </a>);
-    }
+            <a href={meetupUrl} target='_blank'>
+                <div className={`workshop-url ${meetupType}`}>
+                    <img src={`/static/images/${meetupType}.png`} />
+                    <div>Click to join the Meeting</div>
+                </div>
+            </a> );
+    };
 
     render() {
         const workshop = this.props.workshop;
@@ -105,23 +105,23 @@ class WorkshopCard extends Component {
                     </div>
                     <h3 className='card-title workshop-title'>{workshop.title}</h3>
                     <span className='workshop-time'>
-                    <Moment format='h:mm' tz='America/Chicago'>
-                        { workshop.start_time }
-                    </Moment>
-                    -
-                    <Moment format='h:mm' tz='America/Chicago'>
-                        { workshop.end_time }
-                    </Moment>
+                        <Moment format='h:mm' tz='America/Chicago'>
+                            {workshop.start_time}
+                        </Moment>
+                        -
+                        <Moment format='h:mm' tz='America/Chicago'>
+                            {workshop.end_time}
+                        </Moment>
                     </span>
                     <span className='workshop-location'>{workshop.room}</span>
                     <p className='card-text workshop-description'>
                         {workshop.description}
                     </p>
-                    {workshop.virtual_meetup_url && 
-                        this.renderVirtualMeetupSection(workshop.virtual_meetup_url) }
+                    {workshop.virtual_meetup_url &&
+                        this.renderVirtualMeetupSection( workshop.virtual_meetup_url )}
                 </div>
             </div>
-        )
+        );
     };
 }
 
