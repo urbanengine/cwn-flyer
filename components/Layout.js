@@ -10,7 +10,7 @@ const Layout = props => (
             <meta name="viewport" content="width=device-width, initial-scale=1.0" key="viewport" />
 
             <meta property="og:type" content="event" key="og:type" />
-            <meta property="og:url"  content="https://cwnflyer.com" key="og:url" />
+            <meta property="og:url" content="https://cwnflyer.com" key="og:url" />
             <meta
                 property="og:image"
                 content="http://api.screenshotmachine.com/?key=cc48ac&dimension=1200x630&format=png&hash=0ce5a0fa9c3712995bfb21b1719381cb&cacheLimit=1&timeout=3000&url=https://www.cwnflyer.com/"
@@ -35,6 +35,6 @@ const Layout = props => (
             <Sponsors />
         </footer>
     </div>
-)
+);
 
 export default Layout;

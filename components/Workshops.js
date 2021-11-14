@@ -8,15 +8,15 @@ class Workshops extends Component {
 
     render() {
         const startTime = this.props.startTime;
-        
+
         return (
             <FlyerContext.Consumer>
-                {(context) => {
+                {( context ) => {
                     var workshops = context.state.cwn.workshops;
 
-                    const workshopList = workshops.map( function( workshop ) {
+                    const workshopList = workshops.map( function ( workshop ) {
                         if ( workshop.start_time === startTime ) {
-                            return <WorkshopCard key={workshop.title} workshop={workshop} />
+                            return <WorkshopCard key={workshop.title} workshop={workshop} />;
                         }
                     } );
 
@@ -26,13 +26,13 @@ class Workshops extends Component {
                                 <link rel="stylesheet" href="/static/css/workshops.css" key="workshops:css" />
                             </Head>
                             <div className="card-deck">
-                                { workshopList }
+                                {workshopList}
                             </div>
                         </div>
-                    )
-                } }
+                    );
+                }}
             </FlyerContext.Consumer>
-        )
+        );
     };
 }
 

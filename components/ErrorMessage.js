@@ -15,11 +15,11 @@ class ErrorMessage extends Component {
 
         return (
             <Context.Consumer>
-                {(context) => (
+                {( context ) => (
                     <h3 style={errorMessageStyle} className="error-message">{props.message}</h3>
                 )}
             </Context.Consumer>
-        )
+        );
     }
 }
 
