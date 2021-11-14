@@ -20,7 +20,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.7",
-    "@zeit/next-css": "^1.0.1",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.25.3",
