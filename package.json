@@ -37,8 +37,5 @@
     "dev": "next",
     "heroku-postbuild": "npm run dist",
     "start": "node server.js -p $PORT"
-  },
-  "engines": {
-    "node": "14.x"
   }
 }
