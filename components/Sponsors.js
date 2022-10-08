@@ -19,11 +19,7 @@ class Sponsors extends Component {
                 <footer className="footer fixed-bottom text-center">
                     <div className="container">
                         <p className="cwn-sponsors">
-                            Sponsored by&nbsp;
-                            <a href="https://commentsold.com" target="_blank">
-                                CommentSold
-                            </a>
-                            . Presented by&nbsp;
+                            Presented by&nbsp;
                             <a href="https://www.urbanengine.org" target="_blank">
                                 Urban Engine
                             </a>

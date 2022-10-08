@@ -40,7 +40,7 @@ class Jumbotron extends Component {
                             </a>
                         </h1>
                         <p className="cwn-intro">
-                            CoWorking Night is a free weekly conference where professionals come to learn, connect, and collaborate.
+                            CoWorking Night is a free biweekly conference where professionals come to learn, connect, and collaborate.
                             <br />
                             Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
                             <br />
