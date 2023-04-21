@@ -40,14 +40,14 @@ class Jumbotron extends Component {
                             </a>
                         </h1>
                         <p className="cwn-intro">
-                            CoWorking Night is a free weekly conference where professionals come to learn, connect, and collaborate.
+                            CoWorking Night is a free biweekly conference where professionals come to learn, connect, and collaborate.
                             <br />
-                            Anyone of any age or background is welcome to attend. No RSVP is required; just show up!
+                            Anyone of any age or background is welcome to attend. The event takes place on the second and fourth week of each month and no RSVP is required; attendees can simply show up and participate!
                             <br />
                             <br />
                             Our workshops are led by people like you. If you would like to schedule a workshop with us, we'll market it to our community. 
                             <br />
-                            For inquires about scheduling a workshop, please contact Clark Dunn @ <a href="mailto:clark@beyondrockets.com">clark@beyondrockets.com</a>
+                            For inquires about scheduling a workshop, please contact Clark Dunn @ <a href="mailto:clark@urbanengine.org">clark@urbanengine.org</a>
                         </p>
                         <FlyerContext.Consumer>
                             {(context) => {

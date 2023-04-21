@@ -1,5 +1,6 @@
-const withCSS = require('@zeit/next-css')
-
-module.exports = withCSS({
+const nextConfig = {
   /* config options here */
-});
+  reactStrictMode: false,
+}
+  
+module.exports = nextConfig

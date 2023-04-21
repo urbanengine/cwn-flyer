@@ -18,25 +18,13 @@ class Sponsors extends Component {
                 <div className="footer-spacer" />
                 <footer className="footer fixed-bottom text-center">
                     <div className="container">
-                    <FlyerContext.Consumer>
-                            {(context) => {
-                                const city = context.state.city;
-
-                                return (
-                                    <p className="cwn-sponsors">
-                                        Sponsored by&nbsp;
-                                        <a href={city.sponsor.url} target="_blank">
-                                            {city.sponsor.name}
-                                        </a>
-                                        . Presented by&nbsp;
-                                        <a href="https://www.urbanengine.org" target="_blank">
-                                            Urban Engine
-                                        </a>
-                                        .
-                                    </p>
-                                )
-                        } }
-                    </FlyerContext.Consumer>
+                        <p className="cwn-sponsors">
+                            Presented by&nbsp;
+                            <a href="https://www.urbanengine.org" target="_blank">
+                                Urban Engine
+                            </a>
+                            .
+                        </p>
                     </div>
                 </footer>
             </div>
